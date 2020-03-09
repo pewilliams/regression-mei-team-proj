@@ -17,14 +17,10 @@ http://apps.who.int/gho/data/node.main.MHSUICIDEASDR?lang=en
 Can we statistically confirm and identify which measures/indicators are best associated with suicide rate?  
  
 Proposed metadata:   
- 
- 
+
 GDP per capita ->https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD?view=map 
 Education Index -> https://data.oecd.org/eduatt/adult-education-level.htm 
 Female labor force participation rate -> http://hdr.undp.org/en/content/labour-force-participation-rate-female-male-ratio 
- 
- 
-I am definitely open to more/different factors as well.   
  
 (a)  Your name(s) 
 Samuel Garcia, Michael Szostak, Osman Ghandour, Peter Williams 
