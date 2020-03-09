@@ -31,7 +31,7 @@ Each of these deaths are tragic, and sadly also preventable. For every suicide, 
 
 The objective of our project is to analyze country level data related to suicide rates over the past ten years, and augment it with other country level data and metadata we can obtain to gain and understanding and better describe rising suicide rates worldwide. Our intentions are two-fold: 
 
-1. To describe and identify measures and country level indicators that impact suicide rates at he country level to provide high level decision making support for leaders and authors of public policy related to mental health and suicide. This includes identifying factors and measures related to suicide prevention that are worth identifying and monitoring over time for those who manage health related planning activities and priorities.   
+1. To describe and identify measures and country level indicators that impact suicide rates at he country level to provide high level decision making support for leaders and authors of public policy related to mental health and suicide. This includes identifying factors and measures related to suicide prevention that are worth monitoring over time for those who manage health related planning activities and priorities.   
 2. To discuss the process of collection and the sources of data related to suicide at the country level utilized as well as describing ancillary datasets that were employed to augment and enrich insights related to international differences in suicide rates. The goal here is to make further research and data analysis on this topic more accessible to other interested researchers and data analysts in the future. 
 
 
@@ -52,13 +52,17 @@ Integrating data sourced from various programs, and data collection agencies det
 *1. Can we statistically confirm and identify which measures/indicators are best associated with suicide rate?*  
 *2. What socioeconomic factors help describe suicide rates at the country level?*  
 *3. Can we infer anything about particular country policies or factors contribute to suicide rates?*  
-*4. Is it possible to recommend where should researchers should begin or focus their studies in the future on this topic?*  
+*4. Is it possible to recommend where researchers should begin or focus their studies in the future on this topic?*  
+
+*Osman's note: with such an elementary analysis, any answer of ours for 3 and 4 would seem highly speculative and won't have much basis. we should discuss if/how we can actually answer these questions.
 
 # Proposed Statistical Methods and Models 
 
 We plan to rely on multiple linear regression as a mechanism to discover what variables contribute to describing the outcome of interest, along with their statistical significance. Our purpose in using this tool will be to describe the dataset intuitively, and identify statistical significance of particular explanatory variables on our outcome of interest. 
 
 We also plan to explore using another generalized linear model, the poisson regression model, as our key response variable consists of count data (the number of suicides per 100,000 persons). Our plan is to use both of these models as a means to describe and test hypotheses related to variables that may contribute to suicide rates country by country across the globe. 
+
+For both the multiple linear regression and the poisson regression models, we will use the F-Test and likelihood ratio test to determine how the model would perform if we dropped a certain parameter (make sure we can do this?)
   
 *References*  
   
