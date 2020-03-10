@@ -29,9 +29,9 @@ According to the *World Health Organization*, @who2019 one person dies every 40 
 
 Each of these deaths are tragic, and sadly also preventable. For every suicide, there are many more attempts, and previous suicide attempts are the single most important predictor or risk factor for future suicide attempts. @stats2019 The possibility of prevention and the scale of the problem highlight the need for policy makers, at the national level, to understand the factors that contribute to suicide not only in their own nations but also globally.  
 
-The objective of our project is to analyze country-level data related to suicide rates over the past ten years, and augment it with other country level data and metadata to gain an understanding and better describe rising suicide rates worldwide. Our intentions are two-fold: 
+The objective of our project is to analyze country-level and gender specific data related to suicide rates over the past ten years, and augment it with other country level data and metadata to gain an understanding and better describe rising suicide rates worldwide. Our intentions are two-fold: 
 
-1. To describe and identify measures and indicators that impact suicide rates at the country level, in order to provide high-level decision making support for leaders and authors of public policy related to mental health and suicide. This includes identifying, and monitoring over time, meaningful factors and measures related to suicide prevention, for those who manage health related planning activities and priorities.   
+1. To describe and identify measures and indicators that impact suicide rates at the country level for both males and females, in order to provide high-level decision making support for leaders and authors of public policy related to mental health and suicide. This includes identifying, and monitoring over time, meaningful factors and measures related to suicide prevention, for those who manage health related planning activities and priorities.   
 2. To discuss the sources, and process of collection, of data related to suicide at the country level; describe ancillary datasets that were employed to augment and enrich insights related to international differences in suicide rates. The goal is to make further research and data analysis on this topic more accessible to other interested researchers and data analysts in the future. 
 
 
@@ -41,9 +41,10 @@ The core dataset we plan to rely on comes directly from the *World Health Organi
 
 In addition to relying on the core suicide rate statistics provided above, we also intend to append country-level data, for corresponding time periods, from ancillary data sources. Currently, we are considering the following data: 
 
-1. GDP per capita, as a high level measure of wealth, sourced from the *World Bank*
-2. An education index, as made available from the *OECD*, the *Organization for Economic Co-operation and Development*
-3. The female labor force participation rate, from the *United Nations Development Programme*  
+1. GDP per capita, as a high level measure of wealth, sourced from the *World Bank* (https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD?view=map)
+2. Adult education level, as made available from the *OECD*, the *Organization for Economic Co-operation and Development* ( https://data.oecd.org/eduatt/adult-education-level.htm )
+3. The female labor force participation rate, from the *United Nations Development Programme* (http://hdr.undp.org/en/content/labour-force-participation-rate-female-male-ratio )
+4. Whether or not the government of a country has a suicide prevention strategy, according to the *World Health Organization* (https://apps.who.int/iris/rest/bitstreams/1174021/retrieve)
 
 # Scientific Research Questions To Address
 
@@ -53,6 +54,13 @@ Integrating data sourced from various programs, and data collection agencies det
 *2. What socioeconomic factors help describe suicide rates at the country level?*  
 *3. Based on the data we obtain, are there any inferences we can make about particular country policies or factors that contribute to suicide rates?*  
 *4. Are there recommendations we can make to future researchers or policy makers beginning to study this topic?*  
+
+Alternative?????:
+
+*1. Can we statistically confirm and identify which measures/indicators are best associated with male and female suicide rates at the country level?*  
+*2. Based on the data we obtain, are there any inferences we can make about how a country may be able to reduce the suicide rate (male, female, or both)?*  
+*3. Are there recommendations we can make to future researchers or policy makers beginning to study this topic?*  
+
 
 As researchers we understand that our project is limited by our ability to collect complete and accurate data at the country level, and our research design and methodology. We will attempt to strike a balance between addressing all research questions listed above while also communicating potential limitations to our study.   
 
