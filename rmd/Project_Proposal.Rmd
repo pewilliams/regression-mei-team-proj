@@ -50,17 +50,9 @@ In addition to relying on the core suicide rate statistics provided above, we al
 
 Integrating data sourced from various programs, and data collection agencies detailed above, we plan to tackle our objectives by focusing research questions in the following areas:  
 
-*1. Can we statistically confirm and identify which measures/indicators are best associated with suicide rate?*  
-*2. What socioeconomic factors help describe suicide rates at the country level?*  
-*3. Based on the data we obtain, are there any inferences we can make about particular country policies or factors that contribute to suicide rates?*  
-*4. Are there recommendations we can make to future researchers or policy makers beginning to study this topic?*  
-
-Alternative?????:
-
 *1. Can we statistically confirm and identify which measures/indicators are best associated with male and female suicide rates at the country level?*  
 *2. Based on the data we obtain, are there any inferences we can make about how a country may be able to reduce the suicide rate (male, female, or both)?*  
 *3. Are there recommendations we can make to future researchers or policy makers beginning to study this topic?*  
-
 
 As researchers we understand that our project is limited by our ability to collect complete and accurate data at the country level, and our research design and methodology. We will attempt to strike a balance between addressing all research questions listed above while also communicating potential limitations to our study.   
 
