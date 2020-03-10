@@ -51,18 +51,16 @@ Integrating data sourced from various programs, and data collection agencies det
 
 *1. Can we statistically confirm and identify which measures/indicators are best associated with suicide rate?*  
 *2. What socioeconomic factors help describe suicide rates at the country level?*  
-*3. Can we infer anything about particular country policies or factors contribute to suicide rates?*  
-*4. Is it possible to recommend where future researchers should begin, or focus, their studies on this topic?*  
+*3. Based on the data we obtain, are there any inferences we can make about particular country policies or factors that contribute to suicide rates?*  
+*4. Are there recommendations we can make to future researchers or policy makers beginning to study this topic?*  
 
-*Osman's note: with such an elementary analysis, any answer of ours for 3 and 4 would seem highly speculative and won't have much basis. we should discuss if/how we can actually answer these questions.
+As researchers we understand that our project is limited by our ability to collect complete and accurate data at the country level, and our research design and methodology. We will attempt to strike a balance between addressing all research questions listed above while also communicating potential limitations to our study.   
 
 # Proposed Statistical Methods and Models 
 
 We plan to rely on multiple linear regression as a mechanism to discover what variables contribute to describing the outcome of interest, along with their statistical significance. Our purpose in using this tool will be to describe the dataset intuitively, and identify statistical significance of particular explanatory variables on our outcome of interest. 
 
-We also plan to explore using another generalized linear model, the poisson regression model, as our key response variable consists of count data (the number of suicides per 100,000 persons). Our plan is to use both of these models as a means to describe and test hypotheses related to variables that may contribute to suicide rates country by country across the globe. 
-
-For both the multiple linear regression and the poisson regression models, we will use the F-Test and likelihood ratio test to determine how the model would perform if we dropped a certain parameter (make sure we can do this?)
+We also plan to explore using another generalized linear model, the poisson regression model, as our key response variable consists of count data (the number of suicides per 100,000 persons). Our plan is to use both of these models as a means to describe and test various statistical hypotheses related to variables that may contribute to suicide rates country by country across the globe.  
   
 *References*  
   
