@@ -41,17 +41,26 @@ The core dataset we plan to rely on comes directly from the *World Health Organi
 
 In addition to relying on the core suicide rate statistics provided above, we also intend to append country-level data, for corresponding time periods, from ancillary data sources. Currently, we are considering the following data: 
 
-1. GDP per capita, as a high level measure of wealth, sourced from the *World Bank* (https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD?view=map)
-2. Adult education level, as made available from the *OECD*, the *Organization for Economic Co-operation and Development* ( https://data.oecd.org/eduatt/adult-education-level.htm )
-3. The female labor force participation rate, from the *United Nations Development Programme* (http://hdr.undp.org/en/content/labour-force-participation-rate-female-male-ratio )
-4. Whether or not the government of a country has a suicide prevention strategy, according to the *World Health Organization* (https://apps.who.int/iris/rest/bitstreams/1174021/retrieve)
+1. GDP per capita, as a high level measure of wealth, sourced from the *World Bank* 
+(https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD?view=map)
+
+2. Adult education level, as made available from the *OECD*, the *Organization for Economic Co-operation and Development* 
+( https://data.oecd.org/eduatt/adult-education-level.htm )
+
+3. The female labor force participation rate, from the *United Nations Development Programme* 
+(http://hdr.undp.org/en/content/labour-force-participation-rate-female-male-ratio )
+
+4. Whether or not the government of a country has a suicide prevention strategy, according to the *World Health Organization* 
+(https://apps.who.int/iris/rest/bitstreams/1174021/retrieve)
 
 # Scientific Research Questions To Address
 
 Integrating data sourced from various programs, and data collection agencies detailed above, we plan to tackle our objectives by focusing research questions in the following areas:  
 
 *1. Can we statistically confirm and identify which measures/indicators are best associated with male and female suicide rates at the country level?*  
+
 *2. Based on the data we obtain, are there any inferences we can make about how a country may be able to reduce the suicide rate (male, female, or both)?*  
+
 *3. Are there recommendations we can make to future researchers or policy makers beginning to study this topic?*  
 
 As researchers we understand that our project is limited by our ability to collect complete and accurate data at the country level, and our research design and methodology. We will attempt to strike a balance between addressing all research questions listed above while also communicating potential limitations to our study.   
