@@ -16,3 +16,12 @@ GDP per capita - https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD?view=map
 Education Index - https://data.oecd.org/eduatt/adult-education-level.htm 
 Female labor force participation rate - http://hdr.undp.org/en/content/labour-force-participation-rate-female-male-ratio 
 
+Female labor force participation rate 	http://hdr.undp.org/en/content/labour-force-participation-rate-female-male-ratio 	
+		
+UN: Country's Current health expenditure (% of GDP) per year	The Health expendature Changes per year so may not be as reliable an indicator, unless for instance you chose a val 2 years in advance of the "Common Year"	https://data.un.org/_Docs/SYB/CSV/SYB62_325_201906_Expenditure%20on%20Health.csv
+		
+		
+UN: Country's Health personnel: Nurses and midwives (per 1000 population)	Per year as well, probably a very good predictor. 	https://data.un.org/_Docs/SYB/CSV/SYB62_154_201906_Health%20Personnel.csv
+		
+List of countries by sex ratio		https://en.wikipedia.org/wiki/List_of_countries_by_sex_ratio
+
