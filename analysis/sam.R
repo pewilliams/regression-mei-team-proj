@@ -33,6 +33,16 @@ colnames(data) <- c("smf",
 #X6 = Psychiatrists working in mental health sector (per 100 000 population)
 #X7 = Mental hospitals (per 100 000 population)
 
+# Round partial suicide counts up in order to user Poisson regression
+# TODO: put these back into the data frame
+# TODO: perform POISSON REGRESSION
+ceiling(data$smf)
+ceiling(data$sm)
+ceiling(data$sf)
+
+# TODO: feature selection
+# TODO: model selection
+
 ######################################################################################### 
 # Exploratory DATA ANALYSIS:
 # check that the data was read in correctly
@@ -64,6 +74,7 @@ corr_data <- round(cor(data[, numeric_cols]), 4)
 
 ## Visualize the data:
 # plots of all variables
+
 ## HISTOGRAM
 ggplot(data, aes(x = smf)) + 
   geom_histogram(bins = 20, alpha = 0.5, fill = 'blue')
@@ -115,6 +126,7 @@ max(outlierValues)
 
 ggplot(data, aes(x = sf)) + 
   geom_histogram(bins = 20, alpha = 0.5, fill = 'blue')
+
 # COMMENT: tail to the right
 
 ## BOX
@@ -185,7 +197,7 @@ max(outlierValues)
 ggplot(data, aes(x = gdp)) + 
   geom_histogram(bins = 20, alpha = 0.5, fill = 'blue')
 # COMMENT: tail to the right
-# is this lognormal? 
+# look like poisson distribution 
 
 ggplot(data, aes(x=gdp)) +
   geom_boxplot(outlier.colour="black", outlier.shape=16,
@@ -368,96 +380,96 @@ corrgram(data,
 #  B. PLOT Y2 AGAINST INDIVIDUAL PREDICTORS
 #       is there a linear relationship?
 #    1.
-plot(data$exp, data$suicide_m)
-fittedModel <- lm(data$suicide_m ~ data$exp)
-abline(fittedModel)
-summary(fittedModel)
-# COMMENT: does not appear to be a correlation, Adjusted R-squared:  0.0002175
-
-plot(data$lpr, data$suicide_m)
-fittedModel <- lm(data$suicide_m ~ data$lpr)
-abline(fittedModel)
-summary(fittedModel)
-# COMMENT: weak postive correlation, Adjusted R-squared:  0.08769
-
-plot(data$gdp, data$suicide_m)
-fittedModel <- lm(data$suicide_m ~ data$gdp)
-abline(fittedModel)
-summary(fittedModel)
-# COMMENT: no correlation, Adjusted R-squared:  -0.005379
-
-plot(data$la, data$suicide_m)
-fittedModel <- lm(data$suicide_m ~ data$la)
-abline(fittedModel)
-summary(fittedModel)
-# COMMENT: moderate postive correlation, Adjusted R-squared:  0.2169
-
-plot(data$strat, data$suicide_m)
-fittedModel <- lm(data$suicide_m ~ data$strat)
-abline(fittedModel)
-summary(fittedModel)
-# TODO: how to measure correlation on categorical data?
-# COMMENT: weak postive correlation, Adjusted R-squared:  0.03915
-
-plot(data$psyc, data$suicide_m)
-fittedModel <- lm(data$suicide_m ~ data$psyc)
-abline(fittedModel)
-summary(fittedModel)
-# COMMENT: weak postive correlation, Adjusted R-squared:  0.03205
-
-plot(data$hosp, data$suicide_m)
-fittedModel <- lm(data$suicide_m ~ data$hosp)
-abline(fittedModel)
-summary(fittedModel)
-# COMMENT: no correlation, Adjusted R-squared:  -0.002494
+# plot(data$exp, data$suicide_m)
+# fittedModel <- lm(data$suicide_m ~ data$exp)
+# abline(fittedModel)
+# summary(fittedModel)
+# # COMMENT: does not appear to be a correlation, Adjusted R-squared:  0.0002175
+# 
+# plot(data$lpr, data$suicide_m)
+# fittedModel <- lm(data$suicide_m ~ data$lpr)
+# abline(fittedModel)
+# summary(fittedModel)
+# # COMMENT: weak postive correlation, Adjusted R-squared:  0.08769
+# 
+# plot(data$gdp, data$suicide_m)
+# fittedModel <- lm(data$suicide_m ~ data$gdp)
+# abline(fittedModel)
+# summary(fittedModel)
+# # COMMENT: no correlation, Adjusted R-squared:  -0.005379
+# 
+# plot(data$la, data$suicide_m)
+# fittedModel <- lm(data$suicide_m ~ data$la)
+# abline(fittedModel)
+# summary(fittedModel)
+# # COMMENT: moderate postive correlation, Adjusted R-squared:  0.2169
+# 
+# plot(data$strat, data$suicide_m)
+# fittedModel <- lm(data$suicide_m ~ data$strat)
+# abline(fittedModel)
+# summary(fittedModel)
+# # TODO: how to measure correlation on categorical data?
+# # COMMENT: weak postive correlation, Adjusted R-squared:  0.03915
+# 
+# plot(data$psyc, data$suicide_m)
+# fittedModel <- lm(data$suicide_m ~ data$psyc)
+# abline(fittedModel)
+# summary(fittedModel)
+# # COMMENT: weak postive correlation, Adjusted R-squared:  0.03205
+# 
+# plot(data$hosp, data$suicide_m)
+# fittedModel <- lm(data$suicide_m ~ data$hosp)
+# abline(fittedModel)
+# summary(fittedModel)
+# # COMMENT: no correlation, Adjusted R-squared:  -0.002494
 
 ##############################################################################
 #  C. PLOT Y3 AGAINST INDIVIDUAL PREDICTORS
 #       is there a linear relationship?
 #    1.
-plot(data$exp, data$suicide_f)
-fittedModel <- lm(data$suicide_f ~ data$exp)
-abline(fittedModel)
-summary(fittedModel)
-# COMMENT: does not appear to be a correlation, Adjusted R-squared:  -0.002016
-
-plot(data$lpr, data$suicide_f)
-fittedModel <- lm(data$suicide_f ~ data$lpr)
-abline(fittedModel)
-summary(fittedModel)
-# COMMENT: weak postive correlation, Adjusted R-squared:  0.07664
-
-plot(data$gdp, data$suicide_f)
-fittedModel <- lm(data$suicide_f ~ data$gdp)
-abline(fittedModel)
-summary(fittedModel)
-# COMMENT: weak correlation, Adjusted R-squared:  0.0229
-
-plot(data$la, data$suicide_f)
-fittedModel <- lm(data$suicide_f ~ data$la)
-abline(fittedModel)
-summary(fittedModel)
-# COMMENT: weak postive correlation, Adjusted R-squared:  0.01969
-# dramatically less than for males
-
-plot(data$strat, data$suicide_f)
-fittedModel <- lm(data$suicide_f ~ data$strat)
-abline(fittedModel)
-summary(fittedModel)
-# TODO: how to measure correlation on categorical data?
-# COMMENT: no correlation, Adjusted R-squared:  -0.004776
-
-plot(data$psyc, data$suicide_f)
-fittedModel <- lm(data$suicide_f ~ data$psyc)
-abline(fittedModel)
-summary(fittedModel)
-# COMMENT: no correlation, Adjusted R-squared:  -0.005364
-
-plot(data$hosp, data$suicide_f)
-fittedModel <- lm(data$suicide_f ~ data$hosp)
-abline(fittedModel)
-summary(fittedModel)
-# COMMENT: no correlation, Adjusted R-squared:  -0.005688
+# plot(data$exp, data$suicide_f)
+# fittedModel <- lm(data$suicide_f ~ data$exp)
+# abline(fittedModel)
+# summary(fittedModel)
+# # COMMENT: does not appear to be a correlation, Adjusted R-squared:  -0.002016
+# 
+# plot(data$lpr, data$suicide_f)
+# fittedModel <- lm(data$suicide_f ~ data$lpr)
+# abline(fittedModel)
+# summary(fittedModel)
+# # COMMENT: weak postive correlation, Adjusted R-squared:  0.07664
+# 
+# plot(data$gdp, data$suicide_f)
+# fittedModel <- lm(data$suicide_f ~ data$gdp)
+# abline(fittedModel)
+# summary(fittedModel)
+# # COMMENT: weak correlation, Adjusted R-squared:  0.0229
+# 
+# plot(data$la, data$suicide_f)
+# fittedModel <- lm(data$suicide_f ~ data$la)
+# abline(fittedModel)
+# summary(fittedModel)
+# # COMMENT: weak postive correlation, Adjusted R-squared:  0.01969
+# # dramatically less than for males
+# 
+# plot(data$strat, data$suicide_f)
+# fittedModel <- lm(data$suicide_f ~ data$strat)
+# abline(fittedModel)
+# summary(fittedModel)
+# # TODO: how to measure correlation on categorical data?
+# # COMMENT: no correlation, Adjusted R-squared:  -0.004776
+# 
+# plot(data$psyc, data$suicide_f)
+# fittedModel <- lm(data$suicide_f ~ data$psyc)
+# abline(fittedModel)
+# summary(fittedModel)
+# # COMMENT: no correlation, Adjusted R-squared:  -0.005364
+# 
+# plot(data$hosp, data$suicide_f)
+# fittedModel <- lm(data$suicide_f ~ data$hosp)
+# abline(fittedModel)
+# summary(fittedModel)
+# # COMMENT: no correlation, Adjusted R-squared:  -0.005688
 
 ##############################################################################
 ##############################################################################
