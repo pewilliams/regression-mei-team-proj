@@ -7,6 +7,8 @@ library(ggthemes)
 # library(corrplot)
 library(caTools) # sample splitting
 library(data.table)
+library(lmtest) # Breush-Pagan test (bptest)
+library(leaps)
 
 setwd("C:\\Dev\\projects\\isye-6414")
 source('analysis\\util.R')
@@ -44,16 +46,20 @@ if(min(results) < 0) {
   results <- computeError(results, data$smf)
 }
 
+bptest(mfSuicideModel) # BP = 12.148, df = 7, p-value = 0.09579
+
 ##
 # RESULTS:
 #   Adjusted R-squared = 0.2283, model is only explaining about 22.8% of the variability
-#   Heteroscedasticity - transformation of variables or different modeling is called for
+#   Heteroscedasticity: p-value = 0.09579, Weighted LS might be useful
 #   Predicts negative suicide rates
 #   R-squared on predictions: -0.3818
 #   Correcting for negative predictions improved R-squared from -0.3818 to 0.0291
 ##
 # CONCLUSION: 
-#   The model is a poor fit for the data. Will compare results to poisson regression.
+#   The model is a poor fit for the data.
+#   Try removing outliers.
+#   Try poisson regression.
 ##
 message()
 message()
@@ -80,20 +86,33 @@ if(min(results) < 0) {
   results$predicted <- sapply(results$predicted, setZero)
   results <- computeError(results, data$smf)
 } # R-squared: 0.00074217208276417
-plot(rmfSuicideModel)
+#plot(rmfSuicideModel)
+
+bptest(rmfSuicideModel) # BP = 14.852, df = 7, p-value = 0.03794
+
+
 ##
 # RESULTS:
 #   Adjusted R-squared:  0.2765, model is only explaining about 27.65% of the variability
-#   Heteroscedasticity - transformation of variables or different modeling is called for
+#   Heteroscedasticity:  p-value = 0.03794, suggests Weighted LS might be useful
 #   Predicts negative suicide rates
 #   R-squared on predictions: -0.3056
 #   Correcting for negative predictions improved R-squared from -0.3056 to 0.0007
 ##
 # CONCLUSION: 
-#   The model is a poor fit for the data. Transform some variables. 
-#   Will compare results to poisson regression.
+#   The model is a poor fit for the data. 
+#   Transform some variables.
+#   Remove some variables.
+#   Try modeling with interation terms.
+#   Try poisson regression.
 ##
 
+# TODO:
+##
+# Remove features from the Model
+# Use Best subset algorithm to search all possible models and choose the one with 
+# optimal criteria (largest R^2)
+##
 
 
 ##
@@ -167,10 +186,12 @@ if(min(results) < 0) {
   results <- computeError(results, data$sm)
 }
 
+bptest(mSuicideModel) # BP = 16.112, df = 7, p-value = 0.02411
+
 ##
 # RESULTS:
 #   Adjusted R-squared = 0.2846, model is only explaining about 28.46% of the variability
-#   Heteroscedasticity - transformation of variables or different modeling is called for
+#   Heteroscedasticity: p-value = 0.02411, Weighted LS might be useful
 #   Predicts negative suicide rates
 #   R-squared on predictions: 0.1666
 #   Correcting for negative predictions improved R-squared from 0.1666 to 0.3715
@@ -208,10 +229,12 @@ if(min(results) < 0) {
   results <- computeError(results, data$sf)
 }
 
+bptest(fSuicideModel) # BP = 4.3884, df = 7, p-value = 0.7341
+
 ##
 # RESULTS:
 #   Adjusted R-squared = 0.115, model is only explaining about 11.5% of the variability
-#   Heteroscedasticity - transformation of variables or different modeling is called for
+#   Heteroscedasticity: p-value = 0.7341, Weighted LS might not be useful
 #   Predicts negative suicide rates
 #   R-squared on predictions: 0.4720
 #   Correcting for negative predictions improved R-squared from 0.4720 to 0.6033
