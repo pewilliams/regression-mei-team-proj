@@ -69,8 +69,10 @@ plot(mfSuicideModel)
 # #127 Russian Federation
 # print(trainingData["65",]) 
 #rTrainingData1 <- subset(trainingData, clab != "Colombia") # example of removing by subset
-#rTrainingData1 <- trainingData[!rownames(trainingData) %in% c("65", "88", "127"), ]
-rTrainingData1 <- trainingData[!rownames(trainingData) %in% c("65", "77", "79", "143"), ]
+
+# these are outliers for seed #1
+rTrainingData1 <- trainingData[!rownames(trainingData) %in% c("65", "88", "127"), ]
+
 rmfSuicideModel <- lm(smf ~ hepg + fmlpr + gdp + la + sps + pimh + mh, data = rTrainingData1)
 summary(rmfSuicideModel) # Adjusted R-squared:  0.2765
 # test the model's predictions
