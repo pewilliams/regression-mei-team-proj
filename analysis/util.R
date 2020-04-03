@@ -60,9 +60,65 @@ computeError <- function(results, dataColumn) {
   message("Root MSE:" , sqrt(MSE))
   
   # R-squared for predicted values
-  SSE <- t(e)%*%e 
-  SST <- sum((mean(data$smf) - results$actual)^2)
-  rSquared <- 1 - SSE/SST
+  SSE <- t(e)%*%e # RSS
+  SST <- sum((results$actual - mean(data$smf))^2) # Syy
+  rSquared <- 1 - SSE/SST # R2 = 1 - RSS/Syy
   message("R-squared: " , rSquared)
   return(results)
+}
+
+# function to extract best model formula from leaps()
+getBestModelFormula <- function(trainingDataFrameXColNames,
+                                trainingDataFrameXCols,
+                                trainingDataFrameYColName, 
+                                trainingDataFrameYCol) {
+  
+  xMatrix <- as.matrix(trainingDataFrameXCols)
+  yVector <- as.vector(trainingDataFrameYCol)
+  rmfSuicideModel.leaps <- leaps(xMatrix, 
+                                 yVector, 
+                                 method = "adjr2", 
+                                 nbest = 10, 
+                                 names = trainingDataFrameXColNames)
+  
+  # $which function gives us all models
+  rmfSuicideModels.models <- rmfSuicideModel.leaps$which
+  rmfSuicideModels.models.size <- rmfSuicideModel.leaps$size
+  
+  # get criterion for all models, in this case adjusted R^2
+  rmfSuicideModels.adjustedR2 <- rmfSuicideModel.leaps$adjr2
+  
+  # plot each model's size vs it's corresponding adjustedR2
+  plot(rmfSuicideModels.models.size, rmfSuicideModels.adjustedR2)
+  
+  # Determine which model has the largest adjusted R-squared
+  maxR2ModelIndex <- which.max(rmfSuicideModels.adjustedR2)
+  #rmfSuicideModels.models[maxR2ModelIndex,] # Adjusted R-squared 0.2897413
+  
+  ### ASSEMBLE THE FORMULA
+  
+  # Use the X variable column names as labels for the coefficients
+  leapsCoefficientLabels <- trainingDataFrameXColNames
+  bestModelCoefficientFlags <- rmfSuicideModel.leaps$which[maxR2ModelIndex,]
+  
+  # create a data frame using the coefficient labels and t/f flags from the best model
+  dfCoefficientLabels <- as.data.frame(leapsCoefficientLabels)
+  dfCoefficientLabels <- transform(dfCoefficientLabels, flag = bestModelCoefficientFlags)
+  
+  # take out all coefficients that are FALSE (not significant), according to the best model
+  dfSignificantCoefficientLabels <- subset(dfCoefficientLabels, flag == TRUE)
+  
+  # generate the formula using the remaining coefficient labels
+  strFormula <- paste(trainingDataFrameYColName, 
+                      paste(t(dfSignificantCoefficientLabels$leapsCoefficientLabels), 
+                            sep = "",
+                            collapse = " + "),
+                      sep = " ~ ")
+  
+  ###
+  
+  message("Best model selected: ", strFormula)
+  
+  return (as.formula(strFormula))
+  
 }
