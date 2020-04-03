@@ -8,7 +8,7 @@ data <- readData()
 # any(is.na(data))
 
 # set a seed for splitting the data randomly
-set.seed(1)
+set.seed(4)
 
 # split the data into a Training set and Testing set
 sample <- sample.split(data$smf, SplitRatio = 0.7) # split along first Y column 

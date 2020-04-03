@@ -30,7 +30,9 @@ results <- computeError(results, data$smf) # R-squared: -0.381804324664092
 if(min(results) < 0) {
   # zero any negative predictions
   # improve accuracy without altering the model
+  message()
   message("Zeroing negative predicted values...")
+  message()
   results$predicted <- sapply(results$predicted, setZero)
   results <- computeError(results, data$smf)
 } # R-squared: 0.0290596803188109
@@ -56,7 +58,7 @@ bptest(mfSuicideModel) # BP = 12.148, df = 7, p-value = 0.09579
 message()
 message()
 #par(mfrow = c(2,2))
-#plot(mfSuicideModel) 
+plot(mfSuicideModel) 
 
 ##
 # IDENTIFY AND HANDLE OUTLIERS
@@ -67,7 +69,8 @@ message()
 # #127 Russian Federation
 # print(trainingData["65",]) 
 #rTrainingData1 <- subset(trainingData, clab != "Colombia") # example of removing by subset
-rTrainingData1 <- trainingData[!rownames(trainingData) %in% c("65", "88", "127"), ]
+#rTrainingData1 <- trainingData[!rownames(trainingData) %in% c("65", "88", "127"), ]
+rTrainingData1 <- trainingData[!rownames(trainingData) %in% c("65", "77", "79", "143"), ]
 rmfSuicideModel <- lm(smf ~ hepg + fmlpr + gdp + la + sps + pimh + mh, data = rTrainingData1)
 summary(rmfSuicideModel) # Adjusted R-squared:  0.2765
 # test the model's predictions
@@ -77,7 +80,9 @@ results <- computeError(results, data$smf) # predicted negative values, R-square
 if(min(results) < 0) {
   # zero any negative predictions
   # improve accuracy without altering the model
+  message()
   message("Zeroing negative predicted values...")
+  message()
   results$predicted <- sapply(results$predicted, setZero)
   results <- computeError(results, data$smf)
 } # R-squared: 0.00074217208276417
@@ -125,7 +130,9 @@ results <- computeError(results, data$smf) # predicted negative values, R-square
 if(min(results) < 0) {
   # zero any negative predictions
   # improve accuracy without altering the model
+  message()
   message("Zeroing negative predicted values...")
+  message()
   results$predicted <- sapply(results$predicted, setZero)
   results <- computeError(results, data$smf)
 } # R-squared: -0.011581177619467
@@ -186,7 +193,9 @@ min(results) # small negative value
 if(min(results) < 0) {
   # zero any negative predictions
   # improve accuracy without altering the model
+  message()
   message("Zeroing negative predicted values...")
+  message()
   results$predicted <- sapply(results$predicted, setZero)
   results <- computeError(results, data$smf)
 } # R-squared: R-squared: 0.9853

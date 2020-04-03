@@ -64,6 +64,8 @@ computeError <- function(results, dataColumn) {
   SST <- sum((results$actual - mean(data$smf))^2) # Syy
   rSquared <- 1 - SSE/SST # R2 = 1 - RSS/Syy
   message("R-squared: " , rSquared)
+  message()
+  message()
   return(results)
 }
 
@@ -93,6 +95,7 @@ getBestModelFormula <- function(trainingDataFrameXColNames,
   
   # Determine which model has the largest adjusted R-squared
   maxR2ModelIndex <- which.max(rmfSuicideModels.adjustedR2)
+  
   #rmfSuicideModels.models[maxR2ModelIndex,] # Adjusted R-squared 0.2897413
   
   ### ASSEMBLE THE FORMULA
@@ -116,8 +119,11 @@ getBestModelFormula <- function(trainingDataFrameXColNames,
                       sep = " ~ ")
   
   ###
-  
+  message()
+  message("maxR2ModelIndex: ", maxR2ModelIndex)
+  message("Highest R^2 value: ", max(rmfSuicideModels.adjustedR2))
   message("Best model selected: ", strFormula)
+  message()
   
   return (as.formula(strFormula))
   
