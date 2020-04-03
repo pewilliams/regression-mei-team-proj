@@ -38,25 +38,97 @@ c_labels <- fread('data_manipulation/country_labels.csv',
 dat <- transform(dat,
 	clab = c_labels$V1)
 
-#pictures
+#add violent against women - optional
+#https://data.oecd.org/inequality/violence-against-women.htm
+# vw <- fread('data_manipulation/violence_against_women_index.csv',
+# 		header=F,sep = ',')
+# dat$vw_index <- match(dat$clab,vw$V1)
+# dat <- dat[!is.na(vw_index)]
+
+#EDA
 
 #outcome - positive skew - transformation needed
-# ggplot(dat, aes(x = srate)) + geom_density()
+ggplot(dat, aes(x = srate)) + geom_density()
+ggplot(dat, aes(x = srate, group = 1)) + geom_jitter()
+
+
+#outliers
+boxplot(dat$srate)
+dat <- dat[!(dat$srate > 25)] #removed the following: 
+#######Guyana
+#NPR Story on Guyana Here: https://www.npr.org/sections/goatsandsoda/2018/06/29/622615518/trying-to-stop-suicide-guyana-aims-to-bring-down-its-high-rate
+#Factors: Lack of mental health facilities
+#Agricultural Work, not advanced tech to support
+#Women Stay at Home - labor participation
+#Alcohol a big contributor (rum shops)
+#Domestic Violence
+#Lesotho, Economics, domestic violence, substance abuse
+#Lithuania, economic crisis: https://en.wikipedia.org/wiki/Suicide_in_Lithuania
+#Russia, Heavy Drinking: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1642767/
+#suicide rate over 25 - classic boxplot outliers
+
+
 
 #scatter plot all - total rate
 #be patient while plot loads
 
-# ggpairs(dat[,c("srate",
-# 	"h_pct_gdp","fm_labor","gdp",
-# 		"lalc","sstrat","psych", "hosp")])
+ggpairs(dat[,c("srate",
+	"h_pct_gdp","fm_labor","gdp",
+		"lalc","sstrat","psych", "hosp","vw_index")])
 
 # baseline model
-lm1 <- lm(log2(srate)~h_pct_gdp+
+lm1 <- lm(srate~h_pct_gdp+
 	fm_labor+gdp+
-	log1p(lalc)+sstrat+
+	lalc+sstrat+
 	psych+hosp,
 	data = dat)
 summary(lm1)
+
+####################### BOXCOX
+#boxcox transformation - full model
+bc <- boxcox(lm1, 
+	lambda = seq(-2, 2, 1/10), plotit = TRUE,
+	xlab = expression(lambda),
+       ylab = "log-Likelihood")
+
+best_lambda <- bc$x[which.max(bc$y)]
+
+bc_transform <- function(lambda,y){
+	if(lambda == 0){
+		log(y)	
+	}else{
+		(y^lambda - 1)/lambda
+	}	
+}
+
+bc_inv <- function(lambda,x){
+	if(lambda == 0){
+		exp(x)		
+	}else{
+		(lambda*x + 1)^(1/lambda)
+	}
+}
+
+dat$bc_srate <- bc_transform(lambda = best_lambda, 
+	y = dat$srate)
+
+############
+# Model 2
+
+dat <- dat[hosp < 1.5] #remove outliers
+#interaction plot: 
+ggplot(dat, aes(y = bc_srate, x = log10(hosp+1))) + 
+	geom_point() + geom_smooth(method = 'lm') + 
+	facet_wrap(~sstrat)
+
+lm2 <- lm(bc_srate~
+	fm_labor+gdp+
+	lalc +sstrat + log1p(hosp) + sstrat * log1p(hosp), #outlier driven
+	data = dat)
+summary(lm2)
+
+#check it out
+
 
 ######
 # sensitivity to liters of alcohol consumed
@@ -71,10 +143,11 @@ newdat <- data.frame(
 	psych = mean(dat$psych),
 	hosp = mean(dat$hosp))
 
-newdat$pred_srate <- predict(lm1, 
+newdat$pred_srate <- predict(lm2, 
 	newdata = newdat)
 
-ggplot(newdat, aes(x = lalc, y = pred_srate)) + 
+ggplot(newdat, aes(x = lalc, 
+	y = bc_inv(lambda = best_lambda,pred_srate))) + 
 	geom_line() + 
 		xlab('Liters of Alcohol Consumer PP') +
 		ylab('Predicted Suicide Rate')
