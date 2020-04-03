@@ -9,10 +9,10 @@ source('analysis\\prep-model-data.R')
 # Ordinary Least Squares Regression on smf (suicide_male_and_female):
 ######################################################################################### 
 message("Ordinary Least Squares Regression on smf (suicide_male_and_female)")
+message()
 
 # train and build the model
-mfSuicideModel <- lm(smf ~ hepg + fmlpr + gdp + la + sps + pimh + mh, data = trainingData)
-summary(mfSuicideModel)
+ 
 # par(mfrow = c(2,2))
 # plot(mfSuicideModel) 
 

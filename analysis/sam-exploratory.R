@@ -1,14 +1,7 @@
-library(MASS) # Box-Cox transformation
-library(lattice) # splom
-library(ggplot2)
-library(ggthemes)
-library(dplyr)
-library(corrgram)
-library(corrplot)
-
 setwd("C:\\Dev\\projects\\isye-6414")
+source('analysis\\libraries.R')
 source('analysis\\util.R')
-source('analysis\\prep-data.R')
+source('analysis\\prep-model-data.R')
 
 # Round partial suicide counts up in order to user Poisson regression
 # TODO: put these back into the data frame
