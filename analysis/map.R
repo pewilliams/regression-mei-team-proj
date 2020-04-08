@@ -1,6 +1,6 @@
 #!/usr/local/bin/R
 # Rscript analysis/peter.R
-# cd ~/Projects/regression-mei-team-proj
+setwd('~/Projects/regression-mei-team-proj')
 
 # World Heatmap
 #########################
