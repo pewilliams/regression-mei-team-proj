@@ -20,9 +20,10 @@ colnames(data1) <- c("Y1", "Y2", "Y3","X1","X2","X3", "X4","X5","X6", "X7")
 
 
 fm1 <-lm(Y1 ~ X1 + X3 + X4 + X5 + X6 + X7, data = data1)
-#Normal Q Q plot -- residuals do not seem to be off in the higher quantiles especially
+#Normal Q Q plot -- residuals seem to be off in the higher quantiles especially
 #deal with this using a box cox transformation
 
+#boxcox(fm3, lambda = seq(0, 0.75, by = 0.05), plotit = TRUE)
 #box cox transformation  use lambda of .4
 fm2<-lm(((Y1^.4-1)/.4)~ X1 + X3 + X4 + X5 + X6 + X7, data = data1)
 #plot(fm2)
@@ -32,7 +33,7 @@ new_data <- data1[-c(12, 79, 88), ]
 
 #12 is Barbados
 #79 is Japan
-#89 is Lesotho
+#88 is Lesotho
 
 fm3<-lm(((Y1^.4-1)/.4)~ X1 + X3 + X4 + X5 + X6 + X7, data = new_data)
 #print(summary(fm3))
@@ -45,7 +46,7 @@ fm4<-lm(((Y1^.4-1)/.4)~  X3 + X4 + X5, data = new_data)
 #Thus, we should reject the model that includes X1, X6, and X7
 
 #final model is fm4
-
+#step(fm4) to get rid of other vars
 
 #weighted least squares
 residuals_data<-resid(fm4)
