@@ -32,11 +32,16 @@ setnames(dat, c("srate", "sm", "sf",
 	"h_pct_gdp","fm_labor","gdp",
 		"lalc","sstrat","psych", "hosp"))
 
+ggplot(dat, aes(x = factor(sstrat), y = srate)) + geom_jitter()
+
 #add country labels for reference
 c_labels <- fread('data_manipulation/country_labels.csv',
 		header=F,sep = ',')
 dat <- transform(dat,
 	clab = c_labels$V1)
+
+ggplot(dat, aes(x = factor(sstrat), y = srate, label = clab)) + 
+  geom_jitter() + geom_text()
 
 #add violent against women - optional
 #https://data.oecd.org/inequality/violence-against-women.htm
