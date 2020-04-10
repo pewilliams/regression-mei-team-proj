@@ -31,7 +31,7 @@ fm2<-lm(((Y1^.4-1)/.4)~ X1 +X2 +X3 + X4 + X5 + X6 + X7, data = data1)
 #plot(fm2)
 
 #Remove outliers: 79 due to high leverage, and 12 due to normal Q Q plot, 88 and 12 due to scale location and residuals vs fitted
-new_data <- data1[-c(12, 79, 88), ] 
+new_data <- data1[-c(12, 65, 79, 88), ] 
 
 #12 is Barbados
 #79 is Japan
@@ -41,24 +41,24 @@ fm3<-lm(((Y1^.4-1)/.4)~ X1 + X2 + X3 + X4 + X5 + X6 + X7, data = new_data)
 #print(summary(fm3))
 
 fm4<-step(fm3)
-#vars in fm4: X1, X2, X3, X4, X5
-#vars removed from fm3 to get fm4: X6 and X7
+#vars in fm4: X2, X3, X4, X5
+#vars removed from fm3 to get fm4: X1, X6, X7
 
 #final model is fm4
 
 
 #weighted least squares
 residuals_data<-resid(fm4)
-fm_resid<-lm(abs(residuals_data) ~ X1 + X2 + X3 + X4 + X5, data = new_data)
-s_hat<-predict(fm_resid, new_data[,c("X1","X2", "X3","X4","X5")])
+fm_resid<-lm(abs(residuals_data) ~  X2 + X3 + X4 + X5, data = new_data)
+s_hat<-predict(fm_resid, new_data[,c("X2", "X3","X4","X5")])
 w<-1/(s_hat^2)
-weighted_fit<-lm(((Y1^.4-1)/.4) ~ X1 + X2 + X3 + X4 + X5, data = new_data, weights=w)
+weighted_fit<-lm(((Y1^.4-1)/.4) ~ X2 + X3 + X4 + X5, data = new_data, weights=w)
 
 #Add the transformed y right into the data.frame
 lambda <- 0.4
 new_data$y <- (new_data$Y1^lambda - 1)/lambda
 mdat <- new_data
-fm4<-lm(y ~  X1 + X2 + X3 + X4 + X5, data = mdat)
+fm4<-lm(y ~  X2 + X3 + X4 + X5, data = mdat)
 
 ###### iterative re-weighted least squares
 #mod: initial model
@@ -68,19 +68,19 @@ fm4<-lm(y ~  X1 + X2 + X3 + X4 + X5, data = mdat)
 iwls <- function(mod, niter, mdat){
   ehat <- abs(resid(mod))
   for (i in 1:niter){
-    form <- as.formula("ehat ~ X1 + X2 + X3 + X4 + X5") 
+    form <- as.formula("ehat ~  X2 + X3 + X4 + X5") 
     sd_mod <- lm(formula = form, data = mdat)
     ehat <- predict(sd_mod)
     wtg <- 1 / (ehat^2)
     print(
       data.frame(rbind(
         coef(mod), 
-        coef(lm(y~ X1 + X2 + X3 + X4 + X5, data = mdat, weights = wtg))
+        coef(lm(y~ X2 + X3 + X4 + X5, data = mdat, weights = wtg))
         ), 
         row.names = c(paste0('iter ',i - 1), paste0('iter ',i))
     ))
     #update for next loop
-    mod <- lm(y~ X1 + X2 + X3 + X4 + X5, data = mdat, weights = wtg)
+    mod <- lm(y~ X2 + X3 + X4 + X5, data = mdat, weights = wtg)
     ehat <- abs(resid(mod)) 
   }
   return(mod)
