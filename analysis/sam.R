@@ -5,6 +5,7 @@ library(ggthemes)
 library(dplyr)
 library(corrgram)
 library(corrplot)
+library(data.table)
 
 
 
@@ -21,6 +22,11 @@ colnames(data) <- c("smf",
                     "sps",
                     "pimh", 
                     "mh") 
+
+c_labels <- fread('data_manipulation/country_labels.csv',
+                  header=F,sep = ',')
+data <- transform(data,
+                       clab = c_labels$V1)
 
 #Y1 = suicide_male_and_female
 #Y2 = suicide_male
@@ -602,5 +608,18 @@ abline(0, 0)
 # COMMENT: 2nd order model yields Ajusted R-squared of 0.1287
 #   Look for other ways to improve the model
 
+# Plot alcohol consumption against the suicide rate
+lam <- lm(smf ~ la, data = data)
+plot(data$smf ~ data$la, 
+     pch = 15, 
+     col = rgb(0, 0, 1, 0.5), 
+     xlab = "Liters of pure alcohol consumed per capita", 
+     ylab = "Suicide rate per capita")
 
+# highlight Russia
+with(data, 
+     text(data[127, 1] ~ data[127, 7], 
+          labels = paste(strwrap(data[127, 11],
+                                 width = 8), collapse = "\n"), 
+          pos = 3) )
 
