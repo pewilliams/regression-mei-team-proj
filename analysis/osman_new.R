@@ -34,6 +34,7 @@ fm2<-lm(((Y1^.4-1)/.4)~ X1 +X2 +X3 + X4 + X5 + X6 + X7, data = data1)
 new_data <- data1[-c(12, 65, 79, 88), ] 
 
 #12 is Barbados
+#65 is Guyana
 #79 is Japan
 #88 is Lesotho
 
