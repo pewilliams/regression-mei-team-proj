@@ -43,6 +43,10 @@ dat <- transform(dat,
 ggplot(dat, aes(x = factor(sstrat), y = srate, label = clab)) + 
   geom_jitter() + geom_text()
 
+
+
+ggplot(dat, aes(x = log(gdp), y = srate, label = clab)) + geom_text()
+
 #add violent against women - optional
 #https://data.oecd.org/inequality/violence-against-women.htm
 # vw <- fread('data_manipulation/violence_against_women_index.csv',
