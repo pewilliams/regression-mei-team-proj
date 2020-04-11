@@ -1,0 +1,32 @@
+---
+title: "Model Assumptions"
+author: "Team 25"
+date: "4/11/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+$$
+\begin{aligned}
+& Y_i = \beta_0 + \beta_1 x_{1i} + \beta_1 x_{2i} + \beta_3 x_{3i} + \beta_4 + \beta_4 x_{4i}  + \epsilon_i,\ \text{where we assumed, } \epsilon_i \sim \mathbb{N}(0,\sigma_{Y}^2) \\
+&\\
+&\text{for } i = 1,...,n \ \text{country level measures, where} \\
+& \\
+& Y_i \ \ : \text{The estimated national suicide rate (per 100k population) for the } i^{\text{th}} \text{ country.}\\
+& x_{1i}\ : \text{The estimated national labor participation rate (percentage) for the } i^{\text{th}} \text{ country.}\\
+& x_{2i}\ : \text{The estimated per-person gross domestic product (GDP) (income) for the } i^{\text{th}} \text{ country.}\\
+& x_{3i}\ : \text{An estimate of the national per-person average of liters of alcohol consumed annually for the } i^{\text{th}} \text{ country.}\\
+& x_{4i}\ : \text{A binary indicator of the 'presence of a national suicide prevention strategy' in 2019 for the } i^{\text{th}} \text{ country.}\\
+& \\
+& \text{This yields fitted regression model: } \\
+& \\
+& Y_i = \hat{\beta_0} + \hat{\beta_1} x_{1i} + \hat{\beta_1} x_{2i} + \hat{\beta_3} x_{3i} + \hat{\beta_4} + \hat{\beta_4} x_{4i} \\
+& \\
+& \text{where, } \\
+& \\
+& \hat{\beta_0}, \hat{\beta_1}, \hat{\beta_2}, \hat{\beta_3}, \ \text{and } \hat{\beta_4} \text{ were estimated by the method of iterative re-weighted least squares.} \\
+\end{aligned}
+$$
