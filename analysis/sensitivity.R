@@ -3,6 +3,7 @@
 # Rscript analysis/sensitivity.R
 
 # cd ~/Projects/regression-mei-team-proj
+# setwd('~/Projects/regression-mei-team-proj')
 #########################
 # author: @pewilliams
 
@@ -44,7 +45,7 @@ lambda <- 0.4 #chosen already
 #### Import model and grab original data 
 #### from model object
 #final model object
-fmod <- readRDS('analysis/final_mod.rds')
+fmod <- readRDS('~/Projects/regression-mei-team-proj/analysis/final_mod.rds')
 
 #data.frame associated with model
 dat <- fmod$model
@@ -97,14 +98,14 @@ pred <- data.frame(bc_inv(0.4, predict(fmod,
 gdp_dat <- cbind(gdp_dat, pred)
 
 gplot <- ggplot(gdp_dat, 
-	aes(x = gdp, 
+	aes(x = exp(gdp), 
 	y = fit)) + 
 	geom_line() + 
 		xlab('GDP') +
 		ylab('Predicted Suicide Rate') +
-	geom_line(aes(x = gdp, y = upr, 
+	geom_line(aes(x = exp(gdp), y = upr, 
 		colour = 'red')) + 
-	geom_line(aes(x = gdp, y = lwr, 
+	geom_line(aes(x = exp(gdp), y = lwr, 
 		colour = 'red')) + 
 	theme_bw() + theme(legend.position = "none")
 

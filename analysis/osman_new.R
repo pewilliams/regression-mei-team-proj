@@ -1,9 +1,9 @@
 library(MASS)
 
 
-data1 <- read.table(file = "C:/Users/oagha/Desktop/isye6414/regression-mei-team-proj/data_manipulation/alldata_nolabels.csv", sep=",")
-# setwd('~/Projects/regression-mei-team-proj/data_manipulation/')
-# data1 <- read.table(file = "alldata_nolabels.csv", sep=",")
+#data1 <- read.table(file = "C:/Users/oagha/Desktop/isye6414/regression-mei-team-proj/data_manipulation/alldata_nolabels.csv", sep=",")
+setwd('~/Projects/regression-mei-team-proj/data_manipulation/')
+data1 <- read.table(file = "alldata_nolabels.csv", sep=",")
 colnames(data1) <- c("Y1", "Y2", "Y3","X1","X2","X3", "X4","X5","X6", "X7") 
 
 #Y1 = suicide_male_and_female
@@ -59,7 +59,10 @@ weighted_fit<-lm(((Y1^.4-1)/.4) ~ X2 + X3 + X4 + X5, data = new_data, weights=w)
 lambda <- 0.4
 new_data$y <- (new_data$Y1^lambda - 1)/lambda
 mdat <- new_data
-fm4<-lm(y ~  X2 + X3 + X4 + X5, data = mdat)
+
+# new_data$gdp <- new_data$X3
+# new_data$X3 <- log(new_data$X3)
+fm4<-lm(y ~  X2 + X3 + X4 + X5, data = new_data)
 
 ###### iterative re-weighted least squares
 #mod: initial model
@@ -89,4 +92,10 @@ iwls <- function(mod, niter, mdat){
 
 final_mod <- iwls(mod=fm4, niter=10, mdat=new_data)
 summary(final_mod)
+
+saveRDS(final_mod, "~/Projects/regression-mei-team-proj/analysis/final_mod.rds")
+
+
+
+
   

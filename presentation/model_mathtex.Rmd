@@ -17,7 +17,7 @@ $$
 & \\
 & Y_i \ \ : \text{The estimated national suicide rate (per 100k population) for the } i^{\text{th}} \text{ country.}\\
 & x_{1i}\ : \text{The estimated national labor participation rate (percentage) for the } i^{\text{th}} \text{ country.}\\
-& x_{2i}\ : \text{The estimated per-person gross domestic product (GDP) (income) for the } i^{\text{th}} \text{ country.}\\
+& x_{2i}\ : \text{The log-transformed estimated per-person gross domestic product (GDP) (income) for the } i^{\text{th}} \text{ country.}\\
 & x_{3i}\ : \text{An estimate of the national per-person average of liters of alcohol consumed annually for the } i^{\text{th}} \text{ country.}\\
 & x_{4i}\ : \text{A binary indicator of the 'presence of a national suicide prevention strategy' in 2019 for the } i^{\text{th}} \text{ country.}\\
 & \\
