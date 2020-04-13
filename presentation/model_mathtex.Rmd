@@ -30,3 +30,39 @@ $$
 & \hat{\beta_0},\ \hat{\beta_1},\ \hat{\beta_2},\ \hat{\beta_3}, \ \text{and } \hat{\beta_4} \text{ were estimated by the method of iterative re-weighted least squares.} \\
 \end{aligned}
 $$
+\begin{table}[!htbp] \centering 
+  \caption {Regression Model Summary} 
+  \label{tab:title} 
+\begin{tabular}{@{\extracolsep{5pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-2} 
+\\[-1.8ex] & Suicide Rate (Box-Cox Transformed $\lambda = 0.4$) \\ 
+\hline \\[-1.8ex] 
+ Income (pp GDP) - Log Transformed & $-$0.404$^{***}$ \\ 
+  & (0.080) \\ 
+  & \\ 
+Liters of Alcohol Consumed & 0.166$^{***}$ \\ 
+  & (0.026) \\ 
+  & \\ 
+Suicide Prevention Strategy (Binary) & 0.562$^{***}$ \\ 
+  & (0.185) \\ 
+  & \\ 
+Labor Participation Rate & 1.031$^{**}$ \\ 
+  & (0.472) \\ 
+  & \\ 
+ Constant & 5.420$^{***}$ \\ 
+  & (0.828) \\ 
+  & \\ 
+\hline \\[-1.8ex] 
+Observations & 162 \\ 
+R$^{2}$ & 0.412 \\ 
+Adjusted R$^{2}$ & 0.397 \\ 
+Residual Std. Error & 1.272 (df = 157) \\ 
+F Statistic & 27.475$^{***}$ (df = 4; 157) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 

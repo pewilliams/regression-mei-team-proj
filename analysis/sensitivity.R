@@ -101,13 +101,20 @@ gplot <- ggplot(gdp_dat,
 	aes(x = exp(gdp), 
 	y = fit)) + 
 	geom_line() + 
-		xlab('GDP') +
-		ylab('Predicted Suicide Rate') +
+		xlab('Income: Per Person GDP') +
+		ylab('Expected Suicide Rate: per 100k Population (Annual)') +
 	geom_line(aes(x = exp(gdp), y = upr, 
 		colour = 'red')) + 
 	geom_line(aes(x = exp(gdp), y = lwr, 
 		colour = 'red')) + 
+  scale_x_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
 	theme_bw() + theme(legend.position = "none")
+
+#elasticity
+gdp_dat$gdp_exp <- exp(gdp_dat$gdp)
+write.csv(gdp_dat, '~/Desktop/gdp.csv', row.names = F)
+
+
 
 ggsave('images/gdp_plot.pdf', plot = gplot)
 
@@ -128,13 +135,15 @@ aplot <- ggplot(alc_dat,
 	aes(x = lalc, 
 	y = fit)) + 
 	geom_line() + 
-		xlab('Litres of Alcohol Consumer Per Year') +
-		ylab('Predicted Suicide Rate') +
+		xlab('Liters of Alcohol Consumed Per Year') +
+		ylab('Expected Suicide Rate: per 100k Population (Annual)') +
 	geom_line(aes(x = lalc, y = upr, 
 		colour = 'red')) + 
 	geom_line(aes(x = lalc, y = lwr, 
 		colour = 'red')) + 
 	theme_bw() + theme(legend.position = "none")
+
+write.csv(alc_dat, '~/Desktop/alc.csv', row.names = F)
 
 ggsave('images/alc_plot.pdf', plot = aplot)
 
@@ -150,13 +159,14 @@ pred <- data.frame(bc_inv(0.4, predict(fmod,
 	interval = 'confidence')))
 
 ss_dat <- cbind(ss_dat, pred)
+ss_dat$ind <- ifelse(ss_dat$sstrat == 1, 'Yes', 'No')
 
 splot <- ggplot(ss_dat, 
 	aes(y = fit, ymin = lwr, 
-	ymax = upr, x = factor(sstrat))) +
+	ymax = upr, x = factor(ind))) +
 	geom_crossbar(width = 0.2, fill = 'gray') +
-		xlab('National Suicide Prevention Strategy (1 = Yes, 0 = No)') +
-		ylab('Predicted Suicide Rate')  + 
+		xlab('National Suicide Prevention Strategy (Presence)') +
+		ylab('Expected Suicide Rate: per 100k Population (Annual)')  + 
 	theme_bw() + theme(legend.position = "none")
 
 ggsave('images/ss_plot.pdf', plot = splot)
