@@ -83,6 +83,23 @@ mp1 <- ggplot(data = world) +
 mp1 + coord_sf(crs = "+proj=merc", 
                ylim = c(-8000000, 18000000)) 
 
-ggsave('map.pdf')
+#africa
+zmap <- ggplot(data = world) +
+  geom_sf(aes(fill = srate)) +
+  theme_bw() + labs(fill = "Rate") 
+
+zmap <- zmap + coord_sf(crs = "+proj=merc", 
+         ylim = c(-3700000, 6000000), xlim = c(-3000000, 6000000)) 
+zmap
+#ggsave('map.pdf')
+
+#russia
+zmap <- ggplot(data = world) +
+  geom_sf(aes(fill = srate)) +
+  theme_bw() + labs(fill = "Rate") 
+
+zmap <- zmap + coord_sf(crs = "+proj=merc", 
+                        ylim = c(-2000000, 14000000), xlim = c(-2000000, 22000000)) 
+zmap
 
 
