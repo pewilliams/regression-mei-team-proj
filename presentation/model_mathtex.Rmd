@@ -15,7 +15,7 @@ $$
 &\\
 &\text{for } i = 1,...,n \ \text{country level measures, where} \\
 & \\
-& Y_i \ \ : \text{The estimated national suicide rate (per 100k population) for the } i^{\text{th}} \text{ country.}\\
+& Y_i \ \ : \text{The estimated national suicide rate (per 100k population) for the} i^{\text{th}} \text{ country.} (Box-cox transformed $\lambda = 0.4$)\\
 & x_{1i}\ : \text{The estimated national labor participation rate (percentage) for the } i^{\text{th}} \text{ country.}\\
 & x_{2i}\ : \text{The log-transformed estimated per-person gross domestic product (GDP) (income) for the } i^{\text{th}} \text{ country.}\\
 & x_{3i}\ : \text{An estimate of the national per-person average of liters of alcohol consumed annually for the } i^{\text{th}} \text{ country.}\\

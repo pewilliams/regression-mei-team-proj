@@ -16,46 +16,31 @@ bibliography: report_bib.bib
 knitr::opts_chunk$set(echo = TRUE)
 knitr::current_input(dir = TRUE)
 knitr::opts_chunk$set(fig.pos = 'H')
-suppressPackageStartupMessages(require(rmarkdown))
-suppressPackageStartupMessages(require(bookdown))
+suppressPackageStartupMessages(require(MASS))
+suppressPackageStartupMessages(require(magrittr))
+suppressPackageStartupMessages(require(stargazer))
 suppressPackageStartupMessages(require(kableExtra))
+#source plots for paper
+source('plots.R')
 ```
 
-# Abstract
-*informative summary of the whole report (100-500 words).*
+\begin{abstract}
+\bigskip
+Relying on open source data from the World Health Organization and other non-governmental bodies, we highlight trends and related to country-level measures of suicide globally. A descriptive model is formulated that identifies a set of meaningful factors and measures that highlights some intuitive relationships between country-level suicide rates and other indicators such as income, alcohol consumption, and the presence of a country level suicide prevention strategy.   
 
-# Introduction
+An initial framework for data-driven decision support for policy makers is presented with recommendations including the identification and ongoing monitoring of meaningful factors and measures related to suicide prevention. The hope is that this can provide some introductory guidance for those managing health related planning activities and priorities related to this topic.   
 
-## Problem Description and Motivation
+An overview of the sources of data, and process of collection, of data related to suicide at the country level is also described briefly, along with a description of some  ancillary datasets that were employed to augment and enrich insights. The intention of these descriptions is to make further research and data analysis on this topic more accessible to other interested researchers and data analysts in the future.  
+
+\end{abstract}  
+
+# Research Motivation
 
 According to the *World Health Organization*, @who2019 one person dies every 40 seconds from suicide. It is the second leading cause of death among teenagers and adults aged 15-29 years. Despite the staggering number of suicides happening worldwide, just 38 governments worldwide have a national suicide prevention strategy. 
 
 Each of these deaths are tragic, and sadly also preventable. For every suicide, there are many more attempts, and previous suicide attempts are the single most important predictor or risk factor for future suicide attempts. @stats2019 The possibility of prevention and the scale of the problem highlight the need for policy makers, at the national level, to understand the factors that contribute to suicide not only in their own nations but also globally.  
 
-The objective of our project is to analyze country-level and gender specific data related to suicide rates over the past ten years, and augment it with other country level data and metadata to gain an understanding and better describe rising suicide rates worldwide. Our intentions are two-fold: 
-
-1. To describe and identify measures and indicators that impact suicide rates at the country level for both males and females, in order to provide high-level decision making support for leaders and authors of public policy related to mental health and suicide. This includes identifying, and monitoring over time, meaningful factors and measures related to suicide prevention, for those who manage health related planning activities and priorities.   
-2. To discuss the sources, and process of collection, of data related to suicide at the country level; describe ancillary datasets that were employed to augment and enrich insights related to international differences in suicide rates. The goal is to make further research and data analysis on this topic more accessible to other interested researchers and data analysts in the future. 
-
-## Challenges
-
-## Problem Solving Strategies
-
-## Learnings
-
-## Report Outline
-
-# Problem Statement
-
-*cite the data sources, and provide a simple presentation of data to help readers understand the problem or challenge(s).*
-
-1. Can we statistically confirm and identify which measures/indicators are best associated with male and female suicide rates at the country level?  
-
-2. Based on the data we obtain, are there any inferences we can make about how a country may be able to reduce the suicide rate (male, female, or both)?  
-
-3. Are there recommendations we can make to future researchers or policy makers beginning to study this topic?  
-
-## Data Sources
+# Variables \& Data Sources
 
 The core dataset we plan to rely on comes directly from the *World Health Organization* and is referenced below.  The key measure of interest for our study is the *the age-standardized suicide rate* by country, which is defined as *a weighted average of the age-specific mortality rates per 100,000 persons, where the weights are the proportions of persons in the corresponding age groups of the WHO standard population.* @whodat2019 The data consists of country-level measures of suicides rates, as defined above, for $183$ nations, broken out by gender, and standardized as describe above. These estimates of age-standardized suicide rates were taken in the year $2000$, $2010$, $2015$, and $2016$. This enables the data analyst to observe differences in rate estimates over time, allowing more context and benchmarking for the purposes of this analysis. In addition to relying on the core suicide rate statistics provided above, we also intend to append country-level data, for corresponding time periods, from ancillary data sources. Currently, we are considering the following data: 
 
@@ -69,23 +54,178 @@ The core dataset we plan to rely on comes directly from the *World Health Organi
 (http://hdr.undp.org/en/content/labour-force-participation-rate-female-male-ratio )
 
 4. Whether or not the government of a country has a suicide prevention strategy, according to the *World Health Organization* 
-(https://apps.who.int/iris/rest/bitstreams/1174021/retrieve)
+(https://apps.who.int/iris/rest/bitstreams/1174021/retrieve)  
 
-# Proposed Methodology
+
+```{r world_map_plot, include=T, echo = F, fig.align='center', fig.width=5, fig.height=4}
+world_map
+```
+  
+  
+```{r africa_map_plot, include=T, echo = F, fig.align='center', fig.width=5, fig.height=4}
+africa_map
+```
+  
+```{r russia_map_plot, include=T, echo = F, fig.align='center', fig.width=5, fig.height=4}
+russia_map
+```
+
+# Modeling \& Assumptions
 
 *explain (and justify) your proposed methods or models.*
 
-# Analysis and Results 
+# Quantifying Impact of Measures on Suicide
 
 *present key findings when executing the proposed methods or models. For the benefit of readability, detailed results should be placed in the Appendix. Reference of computer softwares to implement your proposed methods or models (even it is a web page) should be given.*
 
-# Conclusions
+## Identifying, Describing and Monitoring Country Level Indicators Is Critical for Effective Decision-Making Support
 
-# Appendix
+
+\begin{table}[H]
+\centering 
+\caption{Decision Support Framework for Policy Makers}
+\
+\begin{tabular}{p{5cm}p{10cm}}  
+\hline  
+   Area of Focus  & Decision Support  \\   
+\hline 
+ Identifying \& Quantifying Measures and Indicators of Country Level Suicide Rates &  Using a model to describe the relationships between country-level indicators and suicide rates to help policy makers identify what variables are important and putting context around how to monitor them \\   
+ \hline 
+Incorporating Domain Knowledge and Expertise of Subject Matter Experts & Allows policy makers to correlate indicators with country-level suicide related outcomes in context of qualitative insights from experts in the field \\   
+\hline 
+Insight Gathering, Analysis and Support Policy Maker Decisions & Integrating data and insights and providing inital context to help policy makers to frame longer term health planning activities and policies \\
+\hline 
+\end{tabular} 
+\end{table} 
+
+
+### Quantifying Impact: Income, GDP per person
+
+Insights
+
+Our model indicates the presence of a significant relationship between a measure of income (country-level GDP per person) and suicide 
+
+Countries with lower per person income, tend to have higher incidence of suicide when controlling for other variables in our model*
+
+Based on our estimates, an approximate 10% increase in income corresponds to a 2% decrease in suicide rate at the country level for the typical country
+
+```{r agdp_plot, include=T, echo = F, fig.align='center', fig.width=5, fig.height=4}
+gdp_plot
+```
+
+
+### Quantifying Impact: Alcohol Consumption: 
+
+Insights
+
+Our model indicates the presence of a significant relationship between a measure of alcohol consumption (liters per year)
+
+Countries with higher levels of alcohol consumption income, tend to have higher incidence of suicide when controlling for other variables in our model*
+
+Based on our estimates, an approximate 4% increase in alcohol consumption corresponds to a 2% increase in suicide rate at the country level for the typical country (>4 liters per year)
+
+Alcohol consumption was the most impactful and significant indicator of country-level suicide rate in our analysis
+
+```{r a_alc_plot, include=T, echo = F, fig.align='center', fig.width=5, fig.height=4}
+alc_plot
+```
+
+
+### Quantifying Impact: The Presence of A National Suicide Strategy
+
+Insights
+
+Our model indicates that countries that have put a national suicide prevention strategy in place, tend to have higher incidence of suicide rates overall
+
+Based on our estimates, countries that have implemented a suicide prevention strategy have a 26% higher incidence of suicide nationally 
+
+However, to put this in context, it appears that the institution of a suicide prevention strategy by countries struggling with suicide prevention overall, including Guyana, Lithuania, Suriname, Belarus and South Korea are driving this estimate 
+
+```{r sstrat_plot, include=T, echo = F, fig.align='center', fig.width=5, fig.height=4}
+ss_plot
+```
+
+
+
+
+# Research Limitations
+
+
+
+# Appendix \& References
 
 *This section only includes needed documents to support the presentation in the report. Feel free to divide it into several subsections if necessary. Do NOT dump all computer outputs unor-ganized here*
 
-*References and Credits*  
+## Model Final Specification
+
+$$
+\begin{aligned}
+& Y_i = \beta_0 + \beta_1 x_{1i} + \beta_2 x_{2i} + \beta_3 x_{3i} + \beta_4 x_{4i}  + \epsilon_i,\ \text{where we assumed, } \epsilon_i \sim \mathbb{N}(0,\sigma_{Y}^2) \\
+&\\
+&\text{for } i = 1,...,n \ \text{country level measures, where} \\
+& \\
+& Y_i \ \ : \text{The estimated national suicide rate (per 100k population) for the} i^{\text{th}} \text{ country.(Box-cox transformed $\lambda = 0.4$)} \\
+& x_{1i}\ : \text{The estimated national labor participation rate (percentage) for the } i^{\text{th}} \text{ country.}\\
+& x_{2i}\ : \text{The log-transformed estimated per-person gross domestic product (GDP) (income) for the } i^{\text{th}} \text{ country.}\\
+& x_{3i}\ : \text{An estimate of the national per-person average of liters of alcohol consumed annually for the } i^{\text{th}} \text{ country.}\\
+& x_{4i}\ : \text{A binary indicator of the 'presence of a national suicide prevention strategy' in 2019 for the } i^{\text{th}} \text{ country.}\\
+& \\
+& \text{This yields fitted regression model: } \\
+& \\
+& \hat{Y_i} = \hat{\beta_0} + \hat{\beta_1} x_{1i} + \hat{\beta_2} x_{2i} + \hat{\beta_3} x_{3i} + \hat{\beta_4} x_{4i} \\
+& \\
+& \text{where, } \\
+& \\
+& \hat{\beta_0},\ \hat{\beta_1},\ \hat{\beta_2},\ \hat{\beta_3}, \ \text{and } \hat{\beta_4} \text{ were estimated by the method of iterative re-weighted least squares.} \\
+\end{aligned}
+$$
+
+## Model Summary Statistics
+
+\begin{table}[H] \centering 
+  \caption {Regression Model Summary} 
+  \label{tab:title} 
+\begin{tabular}{@{\extracolsep{5pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-2} 
+\\[-1.8ex] & Suicide Rate (Box-Cox Transformed $\lambda = 0.4$) \\ 
+\hline \\[-1.8ex] 
+ Income (pp GDP) - Log Transformed & $-$0.404$^{***}$ \\ 
+  & (0.080) \\ 
+  & \\ 
+Liters of Alcohol Consumed & 0.166$^{***}$ \\ 
+  & (0.026) \\ 
+  & \\ 
+Suicide Prevention Strategy (Binary) & 0.562$^{***}$ \\ 
+  & (0.185) \\ 
+  & \\ 
+Labor Participation Rate & 1.031$^{**}$ \\ 
+  & (0.472) \\ 
+  & \\ 
+ Constant & 5.420$^{***}$ \\ 
+  & (0.828) \\ 
+  & \\ 
+\hline \\[-1.8ex] 
+Observations & 162 \\ 
+R$^{2}$ & 0.412 \\ 
+Adjusted R$^{2}$ & 0.397 \\ 
+Residual Std. Error & 1.272 (df = 157) \\ 
+F Statistic & 27.475$^{***}$ (df = 4; 157) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+\newpage
+
+# References 
+
+
+
+
   
 
 
