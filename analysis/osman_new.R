@@ -1,9 +1,9 @@
 library(MASS)
 
 
-#data1 <- read.table(file = "C:/Users/oagha/Desktop/isye6414/regression-mei-team-proj/data_manipulation/alldata_nolabels.csv", sep=",")
-setwd('~/Projects/regression-mei-team-proj/data_manipulation/')
-data1 <- read.table(file = "alldata_nolabels.csv", sep=",")
+data1 <- read.table(file = "C:/Users/oagha/Desktop/isye6414/regression-mei-team-proj/data_manipulation/alldata_nolabels.csv", sep=",")
+#setwd('~/Projects/regression-mei-team-proj/data_manipulation/')
+#data1 <- read.table(file = "alldata_nolabels.csv", sep=",")
 colnames(data1) <- c("Y1", "Y2", "Y3","X1","X2","X3", "X4","X5","X6", "X7") 
 
 #Y1 = suicide_male_and_female
@@ -93,7 +93,7 @@ iwls <- function(mod, niter, mdat){
 final_mod <- iwls(mod=fm4, niter=10, mdat=new_data)
 summary(final_mod)
 
-saveRDS(final_mod, "~/Projects/regression-mei-team-proj/analysis/final_mod.rds")
+#saveRDS(final_mod, "~/Projects/regression-mei-team-proj/analysis/final_mod.rds")
 
 
 
