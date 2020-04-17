@@ -153,38 +153,45 @@ interest for our study is the \emph{the age-standardized suicide rate}
 by country, which is defined as \emph{a weighted average of the
 age-specific mortality rates per 100,000 persons, where the weights are
 the proportions of persons in the corresponding age groups of the WHO
-standard population.} (``Suicide Rate Estimates, Age-Standardized
-Estimates by Country'' 2019) The data consists of country-level measures
-of suicides rates. These estimates of
+standard population.} This data is provided by the World Health Organization.
+These estimates of
 age-standardized suicide rates were taken in the year with the most recent available data for each country.
 In addition to
 relying on the core suicide rate statistics provided above, we
 intend to append country-level data
-from ancillary data sources. We consider the following
-data:
+from ancillary data sources. Health Expenditure and GDP per capita were chosen
+ to reflect the resources that a country has its disposal to reduce the suicide rate.
+Liters of Alcohol per capita was chosen to account for an aspect of culture 
+(alcohol consumption) that the media often links to mental health outcomes.
+The prevalence of a suicide prevention strategy, the number of psychiatrists, and the number of mental 
+hospitals were chosen to reflect how a country has deployed its resources to improve mental health outcomes.
+The female/male labor participation ratio was included to control for this aspect of a country’s culture.
+The data for these variables along with the suicide rate variable was available for 166 countries.
 
+Below is the full set of considered independent variables:
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Current Health Expenditure as a percentage of GDP - 
-  \emph{World Bank}
+  \emph{World Health Organization}
 
 \item
   Labor force participation rate, female to male ratio - 
-  \emph{World Bank}
+  \emph{United Nations Development Programme }
   
 \item
   GDP per capita, PPP - 
-  \emph{OECD} 
+  \emph{World Bank} 
+
 \item
-  Liters of Alcohol per capita - 
- \emph{United
-  Nations Development Programme}
+  Liters of Alcohol consumption per capita - 
+  \emph{World Bank}
   
 \item
   Prevelence of a Suicide Prevention Strategy - 
   \emph{World Health Organization}
   
+\item  
   Psychiatrists in mental health, per 100,000 population - 
   \emph{World Health Organization}
   
@@ -192,7 +199,7 @@ data:
   Mental hospitals, per 100,000 population - 
   \emph{World Health Organization}
     
-Note that detailed descriptions of the data and the source links can be found in the appendix. 
+Note that more detailed descriptions of the data and the source links can be found in the appendix. 
 
 
  
