@@ -40,6 +40,33 @@ According to the *World Health Organization*, @who2019 one person dies every 40 
 
 Each of these deaths are tragic, and sadly also preventable. For every suicide, there are many more attempts, and previous suicide attempts are the single most important predictor or risk factor for future suicide attempts. @stats2019 The possibility of prevention and the scale of the problem highlight the need for policy makers, at the national level, to understand the factors that contribute to suicide not only in their own nations but also globally.  
 
+## Why is suicide such a complex problem?
+
+Suicide is a complex societal problem with multiple social, psychological, biological, and cultural factors.  It is one of the top 20 leading causes of death in the world for all ages @ideation2015.  An estimated one million people die annually from suicide, i.e., a global mortality rate of 16 per 100,000, or one death every 40 seconds @ideation2015.  Due to the interactions of so many factors, suicide has no singular cause.
+
+Though it might seem intuitive to categorize suicidal ideation, attempted suicide, and completed suicide as strictly a psychiatric or medical issue or a mental illness, not all who commit suicide are mentally ill. Mental illness is often not clearly distinguishable from normal distress @mental2009. Stressful experiences, such as exposure to trauma, the death of a loved one, a job loss, a change in physical health or relationships and individual characteristics and behaviors are also associated with suicide @framework2016.
+
+To underscore the complex nature of the suicide problem, and to show how causes of suicide can vary between countries, we contrast the situations in Zimbabwe and Russia. Zimbabwe has suffered endemic poverty, hyperinflation, and high unemployment for years. On the other hand, Russia’s levels of alcohol consumption are among the highest in the world. Though their underlying conditions appear to be markedly different, both nations suffer from high rates of suicide.  
+
+## Examples of the causes of suicide
+
+### Economics - Zimbabwe 
+Political crisis coupled with failed economic policy led to the decline of Zimbabwe’s economic output. Over the past few decades, Zimbabwe’s economic decline has resulted in endemic poverty, hyperinflation, and an unemployment rate of over 90% @zimbabwe2009. Zimbabwe’s economic woes are often attributed to the policies of former dictator Robert Mugabe. Post Mugabe, Zimbabwe continues to deal with debt issues, difficulty attracting foreign investment, and currency instability. 
+
+The WHO estimates that 19 persons per 100k take their own life deliberately in Zimbabwe per annum (2019). Of the 166 countries in our study, Zimbabwe ranks 13th in the world for suicides per capita.    
+
+### Alcohol - Russia
+Alcohol use disorder (AUD), defined in the WHO’s International Classification of Diseases, is a chronic disease characterized by compulsive alcohol consumption, loss of control over of alcohol intake, and negative emotional state when not consuming alcohol.  In Russia, the prevalence of AUD is about 4.7%, meaning that almost 1-in-20 suffer from alcohol dependence @russia2018. Alcoholism has been a problem because drinking is not only pervasive, but also a socially acceptable behavior in Russian society. 
+	
+The WHO estimates that 27 persons per 100k take their own life deliberately in Russia per annum (2019). Of the 166 countries in our study, Russia ranks 3rd in the world for suicides per capita.
+
+## Defining the scope of our research
+
+Due to the sheer number of potential factors associated with suicide and the complex nature of the relationships between them, we wanted to identify those that were best associated with suicide rates at the country level. We chose to limit our study to a small set of factors that could be controlled for and acted upon via policy interventions.
+
+The domains, from which we drew the factors, had to be broad enough to reasonably represent as many of the potential causes or mitigators of suicide as possible. Among the domains in consideration were lifestyle, medical/mental health, economic, and suicide-focused policy.
+
+
 # Variables \& Data Sources
 
 The core dataset we plan to rely on comes directly from the *World Health Organization* and is referenced below.  The key measure of interest for our study is the *the age-standardized suicide rate* by country, which is defined as *a weighted average of the age-specific mortality rates per 100,000 persons, where the weights are the proportions of persons in the corresponding age groups of the WHO standard population.* @whodat2019 The data consists of country-level measures of suicides rates, as defined above, for $183$ nations, broken out by gender, and standardized as describe above. These estimates of age-standardized suicide rates were taken in the year $2000$, $2010$, $2015$, and $2016$. This enables the data analyst to observe differences in rate estimates over time, allowing more context and benchmarking for the purposes of this analysis. In addition to relying on the core suicide rate statistics provided above, we also intend to append country-level data, for corresponding time periods, from ancillary data sources. Currently, we are considering the following data: 
