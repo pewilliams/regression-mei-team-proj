@@ -87,7 +87,6 @@ The domains, from which we drew the factors, had to be broad enough to reasonabl
 
 **Health Expenditure** and **GDP per capita** were chosen to reflect the resources that a country has its disposal to reduce the suicide rate. **Liters of Alcohol per capita** was chosen to account for an aspect of culture (alcohol consumption) that the media often links to mental health outcomes. The **presence of a suicide prevention strategy**, the **number of psychiatrists**, and the **number of mental hospitals** were also chosen to reflect how a country has deployed its resources to improve mental health outcomes. The **female/male labor participation ratio** was also included to control for trends or changes related to gender labor participation rates. See the table below for a detailed breakdown.
 
-**Decision Support Framework for Policy Makers**
 
 | Input | Description | Source |
 |-------|-------------|--------|
@@ -98,6 +97,8 @@ Liters of Alcohol per capita |  Total (sum of recorded and unrecorded alcohol) a
 Suicide Prevention Strategy |  Countries which are known have a stand-alone national suicide prevention strategy are included as 1s, else 0. Note that the plan must be stand-alone, and may not be integrated into another plan, in order to count in the dataset. | @strategy
 Psychiatrists in mental health, per capita |  Number of Psychiatrists working in the mental health sector, per 100,000 population. @humanresources |
 Mental hospitals, per capita |  Number of hospitals dedicated to mental health per 100,000 population. | @facilities
+
+Table: Decision Support Framework for Policy Makers
 
 
 Due to the sheer number of potential factors associated with suicide and the complex nature of the relationships between them, we wanted to identify those that were best associated with suicide rates at the country level. We chose to limit our study to a small set of factors that could be controlled for and acted upon via policy interventions. The domains from which we drew the factors, had to be broad enough to reasonably represent as many of the potential causes or mitigators of suicide as possible. Among the domains in consideration were lifestyle, medical/mental health, economic, and suicide-focused policy. Health Expenditure and GDP per capita were chosen to reflect the resources that a country has its disposal to reduce the suicide rate. Liters of Alcohol per capita was chosen to account for an aspect of culture (alcohol consumption) that the media often links to mental health outcomes. The presence of a suicide prevention strategy, the number of psychiatrists, and the number of mental hospitals were also chosen to reflect how a country has deployed its resources to improve mental health outcomes. The female/male labor participation ratio was also included to control for trends or changes related to gender labor participation rates. See the table below for a detailed breakdown.
