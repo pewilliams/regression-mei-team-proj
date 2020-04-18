@@ -28,13 +28,15 @@ source('plots.R')
 \bigskip
 Relying on open source data from the World Health Organization and other non-governmental bodies, we highlight trends and related to country-level measures of suicide globally. A descriptive model is formulated that identifies a set of meaningful factors and measures that highlights some intuitive relationships between country-level suicide rates and other indicators such as income, alcohol consumption, and the presence of a country level suicide prevention strategy.   
 
-An initial framework for data-driven decision support for policy makers is presented with recommendations including the identification and ongoing monitoring of meaningful factors and measures related to suicide prevention. The hope is that this can provide some introductory guidance for those managing health related planning activities and priorities related to this topic.   
+An initial framework for data-driven decision support for policy makers is presented with recommendations including the identification and ongoing monitoring of meaningful factors and measures related to suicide prevention. The hope is that this can provide some introductory guidance for those managing health related planning activities and priorities related to this topic.  
 
 An overview of the sources of data, and process of collection, of data related to suicide at the country level is also described briefly, along with a description of some  ancillary datasets that were employed to augment and enrich insights. The intention of these descriptions is to make further research and data analysis on this topic more accessible to other interested researchers and data analysts in the future.  
 
 \end{abstract}  
 
 # Research Motivation
+
+*Peter Sort Bib configuration*
 
 According to the *World Health Organization*, @who2019 one person dies every 40 seconds from suicide. It is the second leading cause of death among teenagers and adults aged 15-29 years. Despite the staggering number of suicides happening worldwide, just 38 governments worldwide have a national suicide prevention strategy. 
 
@@ -67,7 +69,6 @@ Alcohol use disorder (AUD), defined in the WHO’s International Classification 
 	
 The WHO estimates that 27 persons per 100k take their own life deliberately in Russia per annum (2019). Of the 166 countries in our study, Russia ranks 3rd in the world for suicides per capita.
 
-<<<<<<< HEAD
 *Figure 2: Suicide Rate in Russia (annual persons per 100k population)* 
 ```{r russia_map_plot, include=T, echo = F, fig.align='center', fig.width=4, fig.height=4}
 ##set include=T if you want this plot
@@ -77,29 +78,14 @@ russia_map
 
 
 ## Defining the scope of our research
-=======
+
 # Variables \& Data Sources
->>>>>>> 498b309217a0e12bfd07e04d6c34349684dff6f6
 
 Due to the sheer number of potential factors associated with suicide and the complex nature of the relationships between them, we wanted to identify those that were best associated with suicide rates at the country level. We chose to limit our study to a small set of factors that could be controlled for and acted upon via policy interventions.
 
 The domains, from which we drew the factors, had to be broad enough to reasonably represent as many of the potential causes or mitigators of suicide as possible. Among the domains in consideration were lifestyle, medical/mental health, economic, and suicide-focused policy.
 
 **Health Expenditure** and **GDP per capita** were chosen to reflect the resources that a country has its disposal to reduce the suicide rate. **Liters of Alcohol per capita** was chosen to account for an aspect of culture (alcohol consumption) that the media often links to mental health outcomes. The **presence of a suicide prevention strategy**, the **number of psychiatrists**, and the **number of mental hospitals** were also chosen to reflect how a country has deployed its resources to improve mental health outcomes. The **female/male labor participation ratio** was also included to control for trends or changes related to gender labor participation rates. See the table below for a detailed breakdown.
-
-
-| Input | Description | Source |
-|-------|-------------|--------|
-Current Health Expenditure as a Percentage of GDP | This data provides an indication on the level of resources channeled to health relative to other uses. It shows the importance of the health sector in the whole economy and indicates the societal priority which health is given measured in monetary terms. | @healthexp 
-Labor force participation rate (female-male ratio) |  Ratio of female to male of proportion of a country’s working-age population (ages 15 and older) that engages in the labor market, either by working or actively looking for work, expressed as a percentage of the working-age population. | @laborpart 
-GDP per capita, PPP |  Gross Domestic Product converted to international dollars using purchasing power parity (PPP) rates and divided by total population. This data is in terms of PPP in order to account for differences in the cost of living between countries. | @gdp 
-Liters of Alcohol per capita |  Total (sum of recorded and unrecorded alcohol) amount of alcohol consumed per person (15 years of age or older) over a calendar year, in liters of pure alcohol, adjusted for tourist consumption. | @alcohol 
-Suicide Prevention Strategy |  Countries which are known have a stand-alone national suicide prevention strategy are included as 1s, else 0. Note that the plan must be stand-alone, and may not be integrated into another plan, in order to count in the dataset. | @strategy
-Psychiatrists in mental health, per capita |  Number of Psychiatrists working in the mental health sector, per 100,000 population. @humanresources |
-Mental hospitals, per capita |  Number of hospitals dedicated to mental health per 100,000 population. | @facilities
-
-Table: Decision Support Framework for Policy Makers
-
 
 Due to the sheer number of potential factors associated with suicide and the complex nature of the relationships between them, we wanted to identify those that were best associated with suicide rates at the country level. We chose to limit our study to a small set of factors that could be controlled for and acted upon via policy interventions. The domains from which we drew the factors, had to be broad enough to reasonably represent as many of the potential causes or mitigators of suicide as possible. Among the domains in consideration were lifestyle, medical/mental health, economic, and suicide-focused policy. Health Expenditure and GDP per capita were chosen to reflect the resources that a country has its disposal to reduce the suicide rate. Liters of Alcohol per capita was chosen to account for an aspect of culture (alcohol consumption) that the media often links to mental health outcomes. The presence of a suicide prevention strategy, the number of psychiatrists, and the number of mental hospitals were also chosen to reflect how a country has deployed its resources to improve mental health outcomes. The female/male labor participation ratio was also included to control for trends or changes related to gender labor participation rates. See the table below for a detailed breakdown.
 
@@ -127,16 +113,6 @@ Mental hospitals, per 100,000 pop. & Number of hospitals dedicated to mental hea
 \hline
 \end{tabular} 
 \end{table} 
-
-
-
-
-
-  
-  
-
-  
-
 
 *explain (and justify) your proposed methods or models.*
 
@@ -242,14 +218,6 @@ However, to put this in context, it appears that the institution of a suicide pr
 ```{r sstrat_plot, include=T, echo = F, fig.align='center', fig.width=3, fig.height=3}
 ss_plot
 ```
-
-<<<<<<< HEAD
-# Recommendations
-
-For the selected inputs chosen in the model, there are corresponding recommendations for each input. The following sections go over recommendations for each model input. 
-
-## Suicide Prevention Strategy
-=======
 # Recommendations and Decision Support
 
 For each of the selected model inputs, there are corresponding recommendations. The following sections go over each.
@@ -275,7 +243,6 @@ Suicide is a complex societal problem with no singular cause. However, harmful u
 ## GDP Per Capita
 
 There is a negative correlation between GDP per capita and suicide rates. While it is unknown why this is, we believe that money should be spent to uncover more about the relationship between income and suicide. An analysis on income of specific income groups would shed more light as to whether low income correlates to higher suicide or not. As such it is recommended Invest in research to better understand potential relationships between income instability, income protection and suicide at the individual level. In addition, governments should pursue measures aimed at poverty reduction and unemployment benefits to support economic well-being. 
->>>>>>> 498b309217a0e12bfd07e04d6c34349684dff6f6
 
 Even though countries that have put a national suicide prevention strategy in place, tend to have higher incidence of suicide rates overall, this is in reaction to their already higher suicide rates in general. As such it is still advised to have a national strategy to address suicide. Countries should consider establishing an authoritative agency, tasked with the continued investigating, formulating, and implementing of a National Suicide Prevention Strategy.  This strategy can include, but is not limited to, the establishing of a national suicide crisis line as well as suicide prevention and care services. In addition, it is best to follow recommended practices set forth by UN studies which show and help navigate the intersection of biological, psychological, social, environmental, and cultural factors which influence suicide, as well as successful policies which countries which countries which had national suicide prevention programs had implemented. Devolving countries are recommended to take advantage of online resources for policy planners the WHO's website MiNDbank for recommendations on mental health issues [1]. Follow actions like those below from countries with success in reducing suicide [2]:
 •	Reduce access to means and methods of suicide 
@@ -307,21 +274,19 @@ There is a negative correlation between GDP per capita and suicide rates. While 
 In any study there are limitations on what is considered in analysis. We only considered a limited set of inputs and analysis measures in the allotted time and would perform more had there been more. A breakdown of the research limitations of scope, what was considered, and methodology, how it was analyzed, are described below. 
 
 ## Scope
-<<<<<<< HEAD
 There were issues with some of our inputs, but when drilling down to just the inputs used in the model, we can see room for improvement in data quality. When we used GDP per Capita as a proxy for income, other measures such as country-level median income should have been considered in the future. This would have given a non-uniform distribution of wealth in the country rather than a uniform distribution which is not the case with income inequality. When measuring the liters of alcohol consumed, we assumed a uniform consumption country-wide consumption rate. This doesn’t consider incidence of substance abuse. For Suicide Policy (NSPS), the effectiveness of organizational response hard per country is hard to gauge since local response vs federal not accounted for in measurement. We did not consider local/cultural/interactional measures making it difficult to make country-specific inferences in some cases.
 
 ## Methodology
 For our analysis we chose to use a country level scope, however this cannot drill down to local or individual level, essentially limiting our level of fidelity of reflecting on reality. For each country we only used one year, as such our model assumes effects of each input are fixed rather than temporally differing. When considering our inputs, we cannot completely untangle the effect of variable interactions between another. Higher level interactions and additional factors which may influence suicide rates could be considered in the future. Finally, model formulation limited our analysis strength. We chose to use multiple linear regression for inferential and descriptive reasons, but more complicated / non-linear relationships could be characterized better with more complex approaches. 
 
 \newpage 
-=======
 
 There were issues with some of our inputs, but when drilling down to just the inputs used in the model, we can see room for improvement in data quality. When we used GDP per Capita as a proxy for income, other measures such as country-level median income should have been considered in the future. This would have given a non-uniform distribution of wealth in the country rather than a uniform distribution which is not the case with income inequality. When measuring the liters of alcohol consumed, we assumed a uniform consumption country-wide consumption rate. This doesn’t consider incidence of substance abuse. For Suicide Policy (NSPS), the effectiveness of organizational response hard per country is hard to gauge since local response vs federal not accounted for in measurement. We did not consider local/cultural/interactional measures making it difficult to make country-specific inferences in some cases.
 
 ## Methodology
 
-For our analysis we chose to use a country level scope, however this cannot drill down to local or individual level, essentially limiting our level of fidelity of reflecting on reality. For each country we only used one year, as such our model assumes effects of each input are fixed rather than temporally differing. When considering our inputs, we cannot completely untangle the effect of variable interactions between another. Higher level interactions and additional factors which may influence suicide rates could be considered in the future. Finally, model formulation limited our analysis strength. We chose to use multiple linear regression for inferential and descriptive reasons, but more complicated / non-linear relationships could be characterized better with more complex approaches. 
->>>>>>> 498b309217a0e12bfd07e04d6c34349684dff6f6
+For our analysis we chose to use a country level scope, however this cannot drill down to local or individual level, essentially limiting our level of fidelity of reflecting on reality. For each country we only used one year, as such our model assumes effects of each input are fixed rather than temporally differing. When considering our inputs, we cannot completely untangle the effect of variable interactions between another. Higher level interactions and additional factors which may influence suicide rates could be considered in the future. Finally, model formulation limited our analysis strength. We chose to use multiple linear regression for inferential and descriptive reasons, but more complicated non-linear relationships could be characterized better with more complex approaches. 
+
 
 # Appendix \& References
 
@@ -394,13 +359,13 @@ F Statistic & 27.475$^{***}$ (df = 4; 157) \\
 
 ## Additional Details: Modeling Approach
 
-### Initial Model Choice and Transformation
+## Initial Model Choice and Transformation
 
 We developed a multiple linear regression model to infer properties about how a handful of socioeconomic and cultural indicators impact suicide rates. Initial Model, First, we analyzed the diagnostic plots to understand if our model appropriately fits the data that we have. A major red flag here was the Normal Q-Q plot, which shows if residuals are normally distributed. The residuals deviate from the reference line at the higher quintiles. In order to correct for this, our next step was to try a Box Cox transformation on Y. Below is the log-likelihood plot to determine the lambda value for the Box Cox transformation. A lambda value of 0.4 was chosen. 
 
 We also applied log transformation to the variable GDP per capita to better represent the relationship between this variable and the outcome variable based on visual data exploration and resulting effect . 
 
-### Outlier Removal Decisions 
+## Outlier Removal Decisions 
 
 *Create table here??*
 
@@ -410,24 +375,10 @@ Points 12, 65, and 88 were identified as outliers on the Residuals vs Fitted, Sc
 In addition, point 79 was identified as an outlier that should be removed, as it had very high leverage in the model.
  
 Points 12, 65, 79, and 88 were removed from the dataset. It is important to note that each of these points also had country specific reasons for being excluded: 
-•	 12 – Barbados: Caribbean's leading tourism island, transitioned from agricultural to service based economy very successfully, “very high human development‟ status in terms of the UNDP’s human development index, Extremely low suicide rate
-•	65 – Guyana: 
-•	Extremely poor island country largely made up of agricultural villages.
-•	Very high alcohol and suicide statistics
-•	Ministry of health identified poverty, pervasive stigma about mental illness, access to lethal chemicals, alcohol misuse, interpersonal violence, family dysfunction and insufficient mental health resources as key factors causing one of the highest suicide rates in the world.
-•	79 – Japan:
-•	Notoriously overworked and over stressed population, although the country is very wealthy
-•	Long cultural history of considering certain types of suicides honorable, relatively high cultural tolerance for suicide
-•	Very high suicide rate when compared to other rich nations
-•	88 – Lesotho:
-•	Small, landlocked, mountainous country in Africa
-•	Highest suicide rate in Africa
-•	High levels of child labor
-•	Very poor general health outcomes, ex. second highest instances of tuberculosis and HIV/AIDS in the world 
 
 After the removal of outliers, we implemented a backwards stepwise algorithm based on AIC to remove variables that were redundant or unnecessary in the model. 
 
-### Stepwise Variable Selection Approach
+## Stepwise Variable Selection Approach
 
 We implemented a backwards stepwise algorithm based on AIC to remove variables based on the AIC criterion, the results and variable inclusion decisions are detailed below: 
 
