@@ -68,6 +68,19 @@ The domains, from which we drew the factors, had to be broad enough to reasonabl
 
 **Health Expenditure** and **GDP per capita** were chosen to reflect the resources that a country has its disposal to reduce the suicide rate. **Liters of Alcohol per capita** was chosen to account for an aspect of culture (alcohol consumption) that the media often links to mental health outcomes. The **presence of a suicide prevention strategy**, the **number of psychiatrists**, and the **number of mental hospitals** were also chosen to reflect how a country has deployed its resources to improve mental health outcomes. The **female/male labor participation ratio** was also included to control for trends or changes related to gender labor participation rates. See the table below for a detailed breakdown.
 
+**Decision Support Framework for Policy Makers**
+
+| Input | Description | Source |
+|-------|-------------|--------|
+Current Health Expenditure as a Percentage of GDP | This data provides an indication on the level of resources channeled to health relative to other uses. It shows the importance of the health sector in the whole economy and indicates the societal priority which health is given measured in monetary terms. | @healthexp 
+Labor force participation rate (female-male ratio) |  Ratio of female to male of proportion of a country’s working-age population (ages 15 and older) that engages in the labor market, either by working or actively looking for work, expressed as a percentage of the working-age population. | @laborpart 
+GDP per capita, PPP |  Gross Domestic Product converted to international dollars using purchasing power parity (PPP) rates and divided by total population. This data is in terms of PPP in order to account for differences in the cost of living between countries. | @gdp 
+Liters of Alcohol per capita |  Total (sum of recorded and unrecorded alcohol) amount of alcohol consumed per person (15 years of age or older) over a calendar year, in liters of pure alcohol, adjusted for tourist consumption. | @alcohol 
+Suicide Prevention Strategy |  Countries which are known have a stand-alone national suicide prevention strategy are included as 1s, else 0. Note that the plan must be stand-alone, and may not be integrated into another plan, in order to count in the dataset. | @strategy
+Psychiatrists in mental health, per capita |  Number of Psychiatrists working in the mental health sector, per 100,000 population. @humanresources |
+Mental hospitals, per capita |  Number of hospitals dedicated to mental health per 100,000 population. | @facilities
+
+
 The core dataset we plan to rely on comes directly from the *World Health Organization* and is referenced below.  The key measure of interest for our study is the *the age-standardized suicide rate* by country, which is defined as *a weighted average of the age-specific mortality rates per 100,000 persons, where the weights are the proportions of persons in the corresponding age groups of the WHO standard population.* @whodat2019 The data consists of country-level measures of suicides rates, as defined above, for $183$ nations, broken out by gender, and standardized as describe above. These estimates of age-standardized suicide rates were taken in the year $2000$, $2010$, $2015$, and $2016$. This enables the data analyst to observe differences in rate estimates over time, allowing more context and benchmarking for the purposes of this analysis. In addition to relying on the core suicide rate statistics provided above, we also intend to append country-level data, for corresponding time periods, from ancillary data sources. Currently, we are considering the following data: 
 
 1. GDP per capita, as a high level measure of wealth, sourced from the *World Bank* 
