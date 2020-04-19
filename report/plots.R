@@ -204,7 +204,7 @@ gdp_plot <- ggplot(gdp_dat,
                     y = fit)) + 
   geom_line() + 
   xlab('Income: Per Person GDP') +
-  ylab('Expected Suicide Rate: per 100k Population (Annual)') +
+  ylab('Expected Suicide Rate: per 100k Population') +
   geom_line(aes(x = exp(gdp), y = upr, 
                 colour = 'red')) + 
   geom_line(aes(x = exp(gdp), y = lwr, 
@@ -231,7 +231,7 @@ alc_plot <- ggplot(alc_dat,
                     y = fit)) + 
   geom_line() + 
   xlab('Liters of Alcohol Consumed Per Year') +
-  ylab('Expected Suicide Rate: per 100k Population (Annual)') +
+  ylab('Expected Suicide Rate: per 100k Population') +
   geom_line(aes(x = lalc, y = upr, 
                 colour = 'red')) + 
   geom_line(aes(x = lalc, y = lwr, 
@@ -257,7 +257,7 @@ ss_plot <- ggplot(ss_dat,
                     ymax = upr, x = factor(ind))) +
   geom_crossbar(width = 0.2, fill = 'gray') +
   xlab('National Suicide Prevention Strategy (Presence)') +
-  ylab('Expected Suicide Rate: per 100k Population (Annual)')  + 
+  ylab('Expected Suicide Rate: per 100k Population')  + 
   theme_bw() + theme(legend.position = "none")
 
 
