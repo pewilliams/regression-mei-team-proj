@@ -31,7 +31,7 @@ An overview of our the sources of data utilized, and the process of collection o
 
 An initial framework for data-driven decision support for policy makers is presented with recommendations including the identification and ongoing monitoring of meaningful factors and measures related to suicide prevention. The hope is that this can provide some introductory guidance for those managing health related planning activities and priorities related to this topic.  
 
-An initial framework for data-driven decision support for policy makers is presented with recommendations including the identification and ongoing monitoring of meaningful factors and measures related to suicide prevention. The hope is that this can provide some introductory guidance for those managing health related planning activities and priorities related to this topic.  
+An initial framework for data-driven decision support for policy makers is presented with recommendations including the identification and ongoing monitoring of meaningful factors and measures related to suicide prevention. The hope is that this can provide some introductory guidance for those managing health related planning activities and priorities.  
 
 Utilizing insights from our data analysis, as well as secondary research sources, we present some recommendations related to health-planning related activities for policy makers. Limitations to our research are also discussed in context of the scope of the data collected and the methodology presented here.   
 
@@ -90,7 +90,7 @@ Due to the sheer number of potential factors associated with suicide and the com
 
 Among the domains in consideration were lifestyle, medical/mental health, economic, and suicide-focused policy. The core dataset we plan to rely on comes directly from the World Health Organization (*WHO*). The key measure of interest for our study is the age-standardized suicide rate by country, which is defined as a weighted average of the age-specific mortality rates per 100,000 persons, where the weights are the proportions of persons in the corresponding age groups of the WHO standard population, see the Appendix section for details on how this is estimated.  Estimates of age-standardized suicide rates were taken in the year with the most recent available data for each country from the *WHO*.  
 
-In addition to relying on the core suicide rate statistics provided above, we intend to append country-level data from ancillary data sources. Health Expenditure and GDP per capita were chosen to reflect the resources that a country has its disposal to reduce the suicide rate. Liters of Alcohol per capita was chosen to account for an aspect of culture (alcohol consumption) that the media often links to mental health outcomes. The prevalence of a suicide prevention strategy, the number of psychiatrists, and the number of mental hospitals were chosen to reflect how a country has deployed its resources to improve mental health outcomes. The female/male labor participation ratio was included to control for this aspect of a country’s culture. The data for these variables along with the suicide rate variable was available for 166 countries.  
+In addition to the core suicide rate statistics provided above, we append country-level data from ancillary data sources. Health Expenditure and GDP per capita were chosen to reflect the resources that a country has its disposal to reduce the suicide rate. Liters of Alcohol per capita was chosen to account for an aspect of culture (alcohol consumption) that the media often links to mental health outcomes. The prevalence of a suicide prevention strategy, the number of psychiatrists, and the number of mental hospitals were chosen to reflect how a country has deployed its resources to improve mental health outcomes. The female/male labor participation ratio was included to control for this aspect of a country’s culture. The data for these variables along with the suicide rate variable was available for 166 countries.  
 
 # Modeling \& Assumptions
 
@@ -106,7 +106,7 @@ In the development of our model, we relied on a few assumptions about the qualit
 
 # Quantifying Impact of Measures on Suicide
 
-The model described allows the data analyst to describe the relationships between country-level indicators and measures and suicide rates globally. Armed with a descriptive model of suicide rates, decision-makers can quantify the relationships between these measures to support insight for their health related planning activities. However, data-driven insights derived from this model and the data sources highlighted in this report should be considered in context of specific country-level impacts not considered in this report. As policy makers infer correlations of country-level measures and indicators with suicide rates there is a need to continue to engage subject-matter-experts in the field to draw on their knowledge and experience. Our intention is to provide some initial context and decision support for policy makers managing health related planning globally and at the country level, but the limitations of our research and methodology highlight the ongoing need for data-driven insights to be utilized in context of other research available, as well as the domain knowledge of practitioners, health professionals, scientists, and policy makers among others. 
+Our model allows the data analyst to describe the relationships between country-level indicators and measures and suicide rates globally. Armed with a descriptive model of suicide rates, decision-makers can quantify the relationships between these measures to support insight for their health related planning activities. However, data-driven insights derived from this model and the data sources highlighted in this report should be considered in context of specific country-level impacts not considered in this report. As policy makers infer correlations of country-level measures and indicators with suicide rates there is a need to continue to engage subject-matter-experts in the field to draw on their knowledge and experience. Our intention is to provide some initial context and decision support for policy makers managing health related planning globally and at the country level, but the limitations of our research and methodology highlight the ongoing need for data-driven insights to be utilized in context of other research available, as well as the domain knowledge of practitioners, health professionals, scientists, and policy makers among others. 
 
 To highlight the need for a holistic approach to gathering data-driven insights, and incorporating domain knowledge of subject matter experts, we describe a basic framework for potentially incorporating insights from our model into a policy decision-making process:  
 
@@ -131,9 +131,9 @@ In context of providing exemplary decision-support ofr health related planning a
 
 ## Quantifying Impact: Income, GDP per person
 
-A key insight that surfaced during the modeling process was the presence of a significant relationship between a measure of income (here defined as the country-level GDP per person) and suicide country level suicide rates. Countries with lower per person income, tend to have higher incidence of suicide when controlling for other variables in our model. To explore this relationship further, we wanted to explore the expected impact of income, or per-person GDP, on a country's suicide rate controlling for the other key factors in our model including alcohol consumption, the female-male labor participation rate, and the presence of a country-level suicide prevention strategy. 
+A key insight that surfaced during the modeling process was the presence of a significant relationship between a measure of income (here defined as the country-level GDP per person) and country level suicide rates. Countries with lower per person income, tend to have higher incidence of suicide. To explore this relationship further, we look at the impact of income, or per-person GDP, on a country's suicide rate controlling for the other key factors in our model including alcohol consumption, the female-male labor participation rate, and the presence of a country-level suicide prevention strategy. 
 
-When controlling for these variables, we found that an approximate 10% increase in income (or GDP per-person) corresponded to a 2% decrease in suicide rate at the country level for the typical country. The illustrate further the following plot highlights the sensitivity of income to suicide rates based on results from our model:  
+When controlling for these variables, we found that an approximate 10% increase in income (or GDP per-person) corresponded to a 2% decrease in suicide rate at the country level for the typical country. The following plot highlights the sensitivity of income to suicide rates based on results from our model:  
 
 *Figure 3: Expected Country-Level Suicide Rate vs. Income (GDP per-person)* 
 ```{r agdp_plot, include=T, echo = F, fig.align='center', fig.width=6, fig.height=4}
@@ -144,9 +144,9 @@ gdp_plot
 
 ## Quantifying Impact: Alcohol Consumption  
 
-A key insight that surfaced during the modeling process was the presence of a significant relationship between a measure of alcohol abuse, liters of consumption per year, and suicide country level suicide rates. As might be expected, countries with higher levels of alcohol consumption income in our data, tended to have higher incidence of suicide when controlling for other variables in our model. Based on our estimates, an approximate 4% increase in alcohol consumption corresponded to an expected 2% increase in suicide rate at the country level for the typical country, i.e. countries with >4 liters of consumption per adult, on average, per year. 
+A key insight that surfaced during the modeling process was the presence of a significant relationship between a measure of alcohol abuse, liters of consumption per year, and suicide country level suicide rates. As might be expected, countries with higher levels of alcohol consumption income in our data, tended to have higher incidence of suicide when controlling for other variables in our model. Based on our estimates, an approximate 4% increase in alcohol consumption corresponded to an expected 2% increase in suicide rate for countries where adults, on average, consume more than 4 liters of alcohol per year. 
 
-Another thing to note from our data analysis, is that alcohol consumption was the most impactful and significant indicator of country-level suicide rate we identified. The illustrate the estimated impact, the following plot highlights the sensitivity of alcohol consumption to suicide rates based on results from our model:   
+Another thing to note from our data analysis, is that alcohol consumption was the most impactful and significant indicator of country-level suicide rate in our model. The illustrate the estimated impact, the following plot highlights the sensitivity of alcohol consumption to suicide rates based on results from our model:   
 
 *Figure 4: Expected Country-Level Suicide Rate vs. Liters of Alcohol Consumer Per Year (pp)* 
 ```{r a_alc_plot, include=T, echo = F, fig.align='center', fig.width=6, fig.height=4}
@@ -154,7 +154,7 @@ alc_plot
 ```
 *Note: Expected rate with 95% confidence intervals for the typical country (i.e. holding other variables in model identified fixed at the 'sample mean').*
 
-This sensitivity analysis highlights the strong relationship between these variables, which isn't an entirely novel relationship we discovered. Our brief case study of suicide in Russia was meant to provide some discussion of the real impact alcohol consumption. However our model does provide estimates that can begin to estimate the impact of this factor quantitatively at the country level.    
+This sensitivity analysis highlights the strong relationship between these variables, which isn't an entirely novel relationship we discovered. Our brief case study of suicide in Russia was meant to provide some discussion of the real impact alcohol consumption.  
 
 ### Quantifying Impact: The Presence of A National Suicide Strategy
 
@@ -207,7 +207,7 @@ There is a negative correlation between GDP per capita adjusted for Purchasing P
 
 # Research Limitations
 
-In any study there are limitations on what is considered in analysis. We only considered a limited set of inputs and analysis measures in the allotted time and would perform more had there been more. A breakdown of the research limitations of scope, what was considered, and methodology, how it was analyzed, are described below. 
+In any study there are limitations on what is considered in analysis. We only considered a small set of potential country-level indicators, and our methodology was simple and focused on descriptive analysis. We highlight some research limitations related to the scope of measures that we considered, as well as the methodology we utilized below. 
 
 ## Scope
 
