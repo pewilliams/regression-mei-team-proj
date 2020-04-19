@@ -98,12 +98,26 @@ world_map <- mp1 + coord_sf(crs = "+proj=merc",
 
 
 #africa
+
+circle_f <- function(center = c(0,0),diameter = 1, npoints = 100){
+  r = diameter / 2
+  tt <- seq(0,2*pi,length.out = npoints)
+  xx <- center[1] + r * cos(tt)
+  yy <- center[2] + r * sin(tt)
+  return(data.frame(x = xx, y = yy))
+}
+
+cdat <- circle_f(c(6000000,-3700000),1000000,npoints = 100)
+
 zmap <- ggplot(data = world) +
-  geom_sf(aes(fill = srate)) +
+  geom_sf(aes(fill = srate))  +
   theme_bw() + labs(fill = "Rate") 
 
 africa_map <- zmap + coord_sf(crs = "+proj=merc", 
                         ylim = c(-3700000, 6000000), xlim = c(-3000000, 6000000)) 
+
+#africa_map
+  
 
 
 

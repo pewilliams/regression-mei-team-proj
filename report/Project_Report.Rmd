@@ -25,7 +25,7 @@ source('plots.R')
 
 \begin{abstract}
 \bigskip
-Relying on open source data from the World Health Organization and other non-governmental bodies, we highlight trends and related to country-level measures of suicide globally. A descriptive model is formulated that identifies a set of meaningful factors and measures that highlights some intuitive relationships between country-level suicide rates and other indicators such as income, alcohol consumption, and the presence of a country level suicide prevention strategy [1].
+Relying on open source data from the World Health Organization and other non-governmental bodies, we highlight trends and related to country-level measures of suicide globally. A descriptive model is formulated that identifies a set of meaningful factors and measures that highlights some intuitive relationships between country-level suicide rates and other indicators such as income, alcohol consumption, and the presence of a country level suicide prevention strategy.
 
 An overview of our the sources of data utilized, and the process of collection of data related to suicide at the country level is described briefly. A description of some ancillary datasets that were employed to augment and enrich insights is also provided. The intention of these descriptions is to make further research and data analysis on this topic more accessible to other interested researchers and data analysts in the future.  
 
@@ -86,19 +86,21 @@ Due to the sheer number of potential factors associated with suicide and the com
 
 Among the domains in consideration were lifestyle, medical/mental health, economic, and suicide-focused policy. The core dataset we plan to rely on comes directly from the World Health Organization (*WHO*). The key measure of interest for our study is the age-standardized suicide rate by country, which is defined as a weighted average of the age-specific mortality rates per 100,000 persons, where the weights are the proportions of persons in the corresponding age groups of the WHO standard population, see the Appendix section for details on how this is estimated.  Estimates of age-standardized suicide rates were taken in the year with the most recent available data for each country from the *WHO*.  
 
-In addition to the core suicide rate statistics provided above, we append country-level data from ancillary data sources. Health Expenditure and GDP per capita were chosen to reflect the resources that a country has its disposal to reduce the suicide rate. Liters of Alcohol per capita was chosen to account for an aspect of culture (alcohol consumption) that the media often links to mental health outcomes. The prevalence of a suicide prevention strategy, the number of psychiatrists, and the number of mental hospitals were chosen to reflect how a country has deployed its resources to improve mental health outcomes. The female/male labor participation ratio was included to control for this aspect of a country’s culture. The data for these variables along with the suicide rate variable was available for 166 countries. v  
+In addition to the core suicide rate statistics provided above, we append country-level data from ancillary data sources. Health Expenditure and GDP per capita were chosen to reflect the resources that a country has its disposal to reduce the suicide rate. Liters of Alcohol per capita was chosen to account for an aspect of culture (alcohol consumption) that the media often links to mental health outcomes. The prevalence of a suicide prevention strategy, the number of psychiatrists, and the number of mental hospitals were chosen to reflect how a country has deployed its resources to improve mental health outcomes. The female/male labor participation ratio was included to control for this aspect of a country’s culture. The data for these variables along with the suicide rate variable was available for 166 countries.
 
-Below is the full set of considered independent variables:  
-  + Current Health Expenditure as a percentage of GDP - World Health Organization
-  + Labor force participation rate, female to male ratio - United Nations Development Programme
-  + GDP per capita, adjusted by Purchasing Power Parity - World Bank
-  + Liters of Alcohol consumption per capita - World Bank
-  + Prevalence of a Suicide Prevention Strategy - World Health Organization
-  + Psychiatrists in mental health, per 100,000 population - World Health Organization
-  + Mental hospitals, per 100,000 population - World Health Organization
-  
+Below is the full set of considered independent variables with corresponding source:  
+
+\begin{itemize}
+  \item Current Health Expenditure as a percentage of GDP: *World Health Organization*  
+  \item Labor force participation rate, female to male ratio: *United Nations Development Programme*
+  \item GDP per capita, adjusted by Purchasing Power Parity: *World Bank*
+  \item Liters of Alcohol consumption per capita: *World Bank*
+  \item Presence of a Suicide Prevention Strategy: *World Health Organization*
+  \item Psychiatrists in mental health, per 100,000 population: *World Health Organization*
+  \item Mental hospitals, per 100,000 population: *World Health Organization*
+\end{itemize}  
+ 
 Note that more detailed descriptions of the data and the source links can be found in the *Appendix*.
-
 
 # Modeling \& Assumptions
 
@@ -111,6 +113,9 @@ The following variables were selected and included in our model: labor force par
 The final step in the development of our model was to implement an iterative algorithm that adjusted the weights for each of our data points (Iteratively Reweighted Least Squares). This allowed us to further limit the influence of outliers on our data.  
 
 In the development of our model, we relied on a few assumptions about the quality of our data. The first is regarding GDP per capita, which is assumed to be an appropriate indicator to reflect the wealth of a country. The second relates to the prevalence of a national suicide prevention strategy. It is assumed that the presence of such a strategy is indicative that the country has taken the time to develop a comprehensive and data driven approach to suicide, based on solid evidence. We also assume that the liters of alcohol consumed per capita reflects the tendency for individuals in the given country to consume excessive amounts of alcohol.  
+
+To develop models utilized in this report we relied on the based functionality provided in the *R* language. Further details can be found in the appendix.  
+
 
 # Quantifying Impact of Measures on Suicide
 
@@ -223,6 +228,10 @@ There were issues with some of our inputs, but when drilling down to just the in
 ## Methodology
 
 For our analysis, we chose to use a country level scope. However, this cannot drill down to local or individual level, essentially limiting our level of fidelity of reflecting on reality. For each country we only used one year, as such our model assumes effects of each input are fixed rather than temporally differing. When considering our inputs, we cannot completely untangle the effect of variable interactions between each other. Higher level interactions and additional factors which may influence suicide rates could be considered in the future. Finally, model formulation limited our analysis strength. We chose to use multiple linear regression for inferential and descriptive reasons, but more complicated / non-linear relationships could be characterized better with more sophisticated approaches. 
+
+# Lessons Learned
+
+*Osman to take a quick stab*
 
 \newpage 
 
@@ -392,6 +401,9 @@ F Statistic & 27.475$^{***}$ (df = 4; 157) \\
 \end{tabular} 
 \end{table} 
 
+## Tools Utilized
+
+We utilized. 
 
 \newpage 
   
