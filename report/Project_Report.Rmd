@@ -112,6 +112,9 @@ The final step in the development of our model was to implement an iterative alg
 
 In the development of our model, we relied on a few assumptions about the quality of our data. The first is regarding GDP per capita, which is assumed to be an appropriate indicator to reflect the wealth of a country. The second relates to the prevalence of a national suicide prevention strategy. It is assumed that the presence of such a strategy is indicative that the country has taken the time to develop a comprehensive and data driven approach to suicide, based on solid evidence. We also assume that the liters of alcohol consumed per capita reflects the tendency for individuals in the given country to consume excessive amounts of alcohol.  
 
+To develop models utilized in this report we relied on the based functionality provided in the *R* language. Further details can be found in the appendix.  
+
+
 # Quantifying Impact of Measures on Suicide
 
 Our model allows the data analyst to describe the relationships between country-level indicators and measures and suicide rates globally. Armed with a descriptive model of suicide rates, decision-makers can quantify the relationships between these measures to support insight for their health related planning activities. However, data-driven insights derived from this model and the data sources highlighted in this report should be considered in context of specific country-level impacts not considered in this report. As policy makers infer correlations of country-level measures and indicators with suicide rates there is a need to continue to engage subject-matter-experts in the field to draw on their knowledge and experience. Our intention is to provide some initial context and decision support for policy makers managing health related planning globally and at the country level, but the limitations of our research and methodology highlight the ongoing need for data-driven insights to be utilized in context of other research available, as well as the domain knowledge of practitioners, health professionals, scientists, and policy makers among others. 
@@ -225,6 +228,10 @@ There were issues with some of our inputs, but when drilling down to just the in
 ## Methodology
 
 For our analysis we chose to use a country level scope, however this cannot drill down to local or individual level, essentially limiting our level of fidelity of reflecting on reality. For each country we only used one year, as such our model assumes effects of each input are fixed rather than temporally differing. When considering our inputs, we cannot completely untangle the effect of variable interactions between another. Higher level interactions and additional factors which may influence suicide rates could be considered in the future. Finally, model formulation limited our analysis strength. We chose to use multiple linear regression for inferential and descriptive reasons, but more complicated / non-linear relationships could be characterized better with more complex approaches. 
+
+# Lessons Learned
+
+*Osman to take a quick stab*
 
 \newpage 
 
@@ -394,6 +401,9 @@ F Statistic & 27.475$^{***}$ (df = 4; 157) \\
 \end{tabular} 
 \end{table} 
 
+## Tools Utilized
+
+We utilized. 
 
 \newpage 
   
