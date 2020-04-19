@@ -1,7 +1,7 @@
 #!/usr/local/bin/R
 # Rscript analysis/peter.R
 # Generate plots for report
-#setwd('~/Projects/regression-mei-team-proj')
+#setwd('~/Projects/regression-mei-team-proj/report')
 
 # Plot Objects
 # 'world_map' - suicide rate by country
@@ -23,6 +23,8 @@ options(scipen = 100)
 #load data
 dat <- fread(file = "../data_manipulation/alldata_nolabels.csv", 
              sep=",", header=F)
+
+atitle_size <- 8
 
 ###	read-able labels
 
@@ -185,7 +187,7 @@ labor_plot <- ggplot(labor_dat,
                 colour = 'red')) + 
   geom_line(aes(x = fm_labor, y = lwr, 
                 colour = 'red')) + 
-  theme_bw() + theme(legend.position = "none")
+  theme_bw() + theme(legend.position = "none", axis.title=element_text(size=atitle_size))
 
 #X3: GDP 
 gdp_dat <- data.frame(
@@ -210,7 +212,7 @@ gdp_plot <- ggplot(gdp_dat,
   geom_line(aes(x = exp(gdp), y = lwr, 
                 colour = 'red')) + 
   scale_x_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
-  theme_bw() + theme(legend.position = "none")
+  theme_bw() + theme(legend.position = "none",axis.title=element_text(size=atitle_size))
 
 
 #X4: Litres Alcohol 
@@ -236,7 +238,7 @@ alc_plot <- ggplot(alc_dat,
                 colour = 'red')) + 
   geom_line(aes(x = lalc, y = lwr, 
                 colour = 'red')) + 
-  theme_bw() + theme(legend.position = "none")
+  theme_bw() + theme(legend.position = "none",axis.title=element_text(size=atitle_size))
 
 #X5: Suicide Strategy 
 ss_dat <- data.frame(
@@ -258,6 +260,6 @@ ss_plot <- ggplot(ss_dat,
   geom_crossbar(width = 0.2, fill = 'gray') +
   xlab('National Suicide Prevention Strategy (Presence)') +
   ylab('Expected Suicide Rate: per 100k Population')  + 
-  theme_bw() + theme(legend.position = "none")
+  theme_bw() + theme(legend.position = "none",axis.title=element_text(size=atitle_size))
 
 
