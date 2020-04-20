@@ -39,7 +39,7 @@ An overview of potential limitations of our research in context of the scope of 
 Suicide is a complex societal problem with multiple social, psychological, biological, and cultural factors.  It is one of the top 20 leading causes of death in the world for all ages [4].  An estimated one million people die annually from suicide, i.e., a global mortality rate of $16$ per $100,000$, or one death every $40$ seconds [4].  Due to the interactions of so many factors, suicide has no singular cause.  
 Though it might seem intuitive to categorize suicidal ideation, attempted suicide, and completed suicide as strictly a psychiatric or medical issue or a mental illness, not all who commit suicide are mentally ill. Mental illness is often not clearly distinguishable from normal distress [5]. Stressful experiences, such as exposure to trauma, the death of a loved one, a job loss, a change in physical health or relationships and individual characteristics and behaviors are also associated with suicide [6].
 
-## Where Is This a Problem
+## Global Trends in Suicide Epidemiology
 
 Suicide is the 15th leading cause of death worldwide, with over 75% of suicides occurring in low-income and middle-income countries [19]. Poverty, particularly in the form of worse economic status, diminished wealth, and unemployment is associated with suicide [19]. Poverty may be defined in terms of deprivation across the multiple dimensions of life, such as education, health, or housing [20]. Both chronic poverty and acute economic events, such as crop failure, constitute possible risk factors for suicidal ideations and behaviors [19]. 
 
@@ -47,7 +47,7 @@ Poverty, unemployment, illiteracy, lack of civic facilities, poor access to heal
 
 To underscore the complex nature of the suicide problem, and to show how causes of suicide can vary between countries, we contrast the situations in Zimbabwe and Russia. Zimbabwe has suffered endemic poverty, hyperinflation, and high unemployment for years. On the other hand, Russia’s levels of alcohol consumption are among the highest in the world. Though their underlying conditions appear to be markedly different, both nations suffer from high rates of suicide.  
 
-### Economics - Zimbabwe 
+### Case Study: Economics - Zimbabwe 
 
 Endemic poverty, hyperinflation, and an unemployment rate of over 90% [7] are among the economic and social problems plaguing Zimbabwe, where political crisis coupled with failed economic policy have led to its decline. Zimbabwe’s economic woes are often attributed to the policies of former dictator Robert Mugabe. Post Mugabe, Zimbabwe continues to deal with debt issues, difficulty attracting foreign investment, and currency instability.  
 
@@ -60,7 +60,7 @@ africa_map
 ```
 *Sourced from the World Health Organization report: “Suicide: Key Facts, 2019” and the WorldBank Economic Profile of the Country of Zimbabwe*
 
-### Alcohol Abuse - Russia
+### Case Study: Alcohol Abuse - Russia
 
 In general, there is no single factor responsible for the suicide rate. Globally however, harmful use of alcohol is among the major risk factors for suicide.  
 
