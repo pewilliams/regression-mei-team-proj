@@ -107,18 +107,19 @@ April 21, 2020
 \end{flushleft}
 
 {
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 \tableofcontents
 }
 \newpage
 
 \begin{abstract}
 \bigskip
-Relying on open source data from the World Health Organization and other non-governmental bodies, we highlight trends and related to country-level measures of suicide globally. A descriptive model is formulated that identifies a set of meaningful factors and measures that highlights some intuitive relationships between country-level suicide rates and other indicators such as income, alcohol consumption, and the presence of a country level suicide prevention strategy.
+Suicide is a complex worldwide problem that has a multitude of causes. This paper aims to highlight trends related to country-level measures of suicide globally. The researchers utilize open source data from the World Health Organization and other non-governmental bodies to develop an inferential statistical model. The model considers country level data related to the wealth, culture, and specific efforts to improve mental health. The model is developed through the implementation of a couple of key algorithms and variable transformations.
 
-An overview of our the sources of data utilized, and the process of collection of data related to suicide at the country level is described briefly. A description of some ancillary datasets that were employed to augment and enrich insights is also provided. The intention of these descriptions is to make further research and data analysis on this topic more accessible to other interested researchers and data analysts in the future.  
+After model development, deeper analysis and recommendations are presented regarding the factors of interest.  It is recommended for countries to consider establishing an authoritative agency, tasked with the continued investigating, formulating, and implementing of a National Suicide Prevention Strategy. Additionally, policy makers should consider implementing measures designed to mitigate the harmful use of alcohol. However, this is a very delicate matter, and cannot be resolved by simply removing access to alcohol. Furthermore, it is recommended to invest in research to better understand potential relationships between income instability, income protection and suicide at the individual level. It is also important for governments to pursue measures aimed at poverty reduction and unemployment benefits to support economic well-being.
 
-Utilizing insights from our data analysis, as well as secondary research sources, we present some recommendations related to health-planning related activities for policy makers. Limitations to our research are also discussed in context of the scope of the data collected and the methodology presented here.   
+As in any research paper, there are clear limitations to the data accessible and to the analysis performed. The data that the model was built upon was assumed to be indicative of wider problems in the countries of interest. For example, high country level alcohol consumption was assumed to be indicative of higher prevalence of alcohol abuse. Another key limitation is that the aggregate data for a singular country may be misrepresentative of the data at the local or regional levels.  Regarding the analysis, it is very difficult to perfectly untangle the effect of variable interactions between each other. 
+   
 
 
 \end{abstract}
@@ -246,7 +247,7 @@ suicide as possible.
 
 Among the domains in consideration were lifestyle, medical/mental
 health, economic, and suicide-focused policy. The core dataset we plan
-to rely on comes directly from the World Health Organization
+to rely on comes directly from the World Health Organization {[}3{]}
 (\emph{WHO}). The key measure of interest for our study is the
 age-standardized suicide rate by country, which is defined as a weighted
 average of the age-specific mortality rates per 100,000 persons, where
@@ -474,7 +475,7 @@ A National Suicide Strategy}
 country (i.e.~holding other variables in model identified fixed at the
 `sample mean').}
 
-While in may seem unintuitive that countries with with a suicide
+While it may seem unintuitive that countries with with a suicide
 prevention strategy have higher rates, it should not be inferred or
 interpreted from our model that having a national suicide prevention
 strategy leads to incidence of suicide rates overall. It may be
@@ -503,28 +504,38 @@ created a task force which teamed up with the WHO to put together a
 study on the causes, preventative, and rehabilitative measures of
 suicide, and which culminated with the release of a report in 1996
 called ``Prevention of suicide: guidelines for the formulation and
-implementation of national strategies'' {[}19{]}. Before this, Finland
+implementation of national strategies'' {[}24{]}. Before this, Finland
 was the only nation which had a national program for suicide prevention.
 
 These guidelines were followed to varying degrees by different countries
 or local municipalities. The 1996 study was followed up with another
-study in 2018 {[}11{]} which contained updated recommendations and
+study in 2018 {[}10{]} which contained updated recommendations and
 findings since 1996. For instance, the intersection of biological,
 psychological, social, environmental, and cultural factors which
 influence suicide, as well as successfully implemented policies from
 which countries which had a national suicide prevention program
 implemented. The 2018 study contained a list of all countries with ``a
 stand-alone national suicide prevention strategy (NSPSs) adopted by the
-government'' {[}20{]}. For our research, the indicator variable was
+government'' {[}10{]}. For our research, the indicator variable was
 sourced from this list.
+
+We found that countries that have put a national suicide prevention
+strategy in place, tend to have higher incidence of suicide rates
+overall, this may be reactionary in nature. If a country has high
+suicide rates then more attention is paid to the issue and programs are
+put in place to combat it. Since most National suicide programs have
+only been emplaced in the last two decades, this may explain the
+counterintuitive trend observed. However, it is still advised to have a
+national strategy to address suicide.
 
 Government policy to combat suicide allows for the ``development and
 strengthening surveillance (of at-risk groups), and to provide and
-disseminate information'' (3) on at-risk individuals to inform action.
-An implementation of a NSPS in Scotland called ``Choose Live'' decreased
-suicide rates by 20\% over 10 years. This sort of improvement in suicide
-rates after implementing is implied in the 2018 report and lends to the
-recommendation that national strategies should be implemented.
+disseminate information'' {[}10{]} on at-risk individuals to inform
+action. An implementation of a NSPS in Scotland called ``Choose Live''
+decreased suicide rates by 20\% over 10 years. This sort of improvement
+in suicide rates after implementing is implied in the 2018 report and
+lends to the recommendation that national strategies should be
+implemented.
 
 Developing countries are recommended to take advantage of online
 resources for policy planners like MiNDbank a website created by the WHO
@@ -532,18 +543,24 @@ with recommendations on mental health issues {[}9{]}. Countries still
 should consider establishing an authoritative agency, tasked with the
 continued investigating, formulating, and implementing of a National
 Suicide Prevention Strategy. It should follow actions like those below
-from countries with success in reducing suicide {[}20{]}: + Reduce
-access to means and methods of suicide + View suicide as a psychological
-mistake + Improve medical, psychological, and psychosocial initiatives +
-Distribute knowledge about evidence-based methods for reducing suicide +
-Raise skill levels among staff and other key individuals in the care
-services + Perform ``root cause'' or event analyses after suicide +
-Support voluntary organizations + Promote public awareness campaigns
-highlighting the prevalence of suicide National strategies should not
-replace existing frameworks already in place in local government either.
-By changing public perceptions, reducing the stigmas associated with
-seeking help, and coming up with national strategies to combat suicide,
-the rate of suicide can be reduced.
+from countries with success in reducing suicide {[}25{]}:
+
+\begin{itemize}
+  \item Reduce access to means and methods of suicide 
+  \item View suicide as a psychological mistake
+  \item Improve medical, psychological, and psychosocial initiatives
+  \item Distribute knowledge about evidence-based methods for reducing suicide
+  \item Raise skill levels among staff and other key individuals in the care services
+  \item Perform “root cause” or event analyses after suicide
+  \item Support voluntary organizations 
+  \item Promote public awareness campaigns highlighting the prevalence of suicide
+\end{itemize}
+
+National strategies should not replace existing frameworks already in
+place in local government either. By changing public perceptions,
+reducing the stigmas associated with seeking help, and coming up with
+national strategies to combat suicide, the rate of suicide can be
+reduced.
 
 \subsection{Alcohol Intake}\label{alcohol-intake}
 
@@ -559,9 +576,10 @@ restrictions on alcohol advertising (across multiple types of media),
 out of sight out of mind. And finally, enact and enforce restrictions on
 the physical availability of retailed alcohol (via reduced hours of
 sale), for example many ``dry states'' do not serve alcohol on Sundays.
-(1) It is not recommended to remove access to alcohol completely as seen
-in the disastrous US history lesion in the prohibition era. The
-increased violence may not have been worth the decrease in suicide. (2)
+{[}12{]} It is not recommended to remove access to alcohol completely as
+seen in the disastrous US history lesson in the prohibition era. The
+increased violence may not have been worth the decrease in suicide.
+{[}26{]}
 
 \subsection{GDP Per Capita}\label{gdp-per-capita}
 
@@ -571,14 +589,15 @@ this is, we believe that money should be spent to uncover more about the
 relationship between income and suicide. Countries with lower GDPs tend
 to have higher rates of suicide, which also tend to have lower quality
 infrastructure, health care, and a plethora of other associated
-industries. (1) With these lower quality services and access to them, at
-risk individuals may have higher likelihood of suicide. An analysis on
-income of specific income groups would shed more light as to whether low
-income correlates to higher suicide or not. As such it is recommended
-Invest in research to better understand potential relationships between
-income instability, income protection and suicide at the individual
-level. In addition, governments should pursue measures aimed at poverty
-reduction and unemployment benefits to support economic well-being.
+industries. {[}11{]} With these lower quality services and access to
+them, at risk individuals may have higher likelihood of suicide. An
+analysis on income of specific income groups would shed more light as to
+whether low income correlates to higher suicide or not. As such it is
+recommended invest in research to better understand potential
+relationships between income instability, income protection and suicide
+at the individual level. In addition, governments should pursue measures
+aimed at poverty reduction and unemployment benefits to support economic
+well-being.
 
 \section{Research Limitations}\label{research-limitations}
 
@@ -623,7 +642,17 @@ better with more sophisticated approaches.
 
 \section{Lessons Learned}\label{lessons-learned}
 
-\emph{Osman to take a quick stab}
+We had a great experience taking ISyE 6414. Technically, we learned a
+tremendous amount about how and why different regression techniques are
+used. However, one of the most important lessons learned is from working
+on the project. Specifically, we learned about the significance of
+communicating the details of the project in a format that can be
+understood and acted on by regular professionals, even if they are not
+educated in statistics. When presenting a certain piece of information,
+we tried to consider the perspective of someone who may not have a
+strong statistical background. Developing this skill was difficult, and
+we hope to have refined it through reminding ourselves of its important
+in our future jobs.
 
 \newpage 
 
@@ -632,7 +661,7 @@ better with more sophisticated approaches.
 \subsection{Variable \& Data Sources}\label{variable-data-sources}
 
 The following table describes the the full set of variables we
-considered:
+considered and associated data sources:
 
 \begin{table}[H]
 \centering 
@@ -642,19 +671,19 @@ considered:
 \hline  
   Input & Data Description  & Source  \\   
 \hline 
-Current Health Expenditure as a Percentage of GDP & This data provides an indication on the level of resources channeled to health relative to other uses. It shows the importance of the health sector in the whole economy and indicates the societal priority which health is given measured in monetary terms. & World Health Organization (2)  \\   
+Current Health Expenditure as a Percentage of GDP & This data provides an indication on the level of resources channeled to health relative to other uses. It shows the importance of the health sector in the whole economy and indicates the societal priority which health is given measured in monetary terms. & World Health Organization [13]  \\   
  \hline 
-Labor force participation rate (female-male ratio) & Ratio of female to male of proportion of a country’s working-age population (ages 15 and older) that engages in the labor market, either by working or actively looking for work, expressed as a percentage of the working-age population. & United Nations Development Programme (1) \\   
+Labor force participation rate (female-male ratio) & Ratio of female to male of proportion of a country’s working-age population (ages 15 and older) that engages in the labor market, either by working or actively looking for work, expressed as a percentage of the working-age population. & United Nations Development Programme [14] \\   
 \hline 
-GDP per capita, PPP & Gross Domestic Product converted to international dollars using purchasing power parity (PPP) rates and divided by total population. This data is in terms of PPP in order to account for differences in the cost of living between countries. & World Bank (1) \\
+GDP per capita, PPP & Gross Domestic Product converted to international dollars using purchasing power parity (PPP) rates and divided by total population. This data is in terms of PPP in order to account for differences in the cost of living between countries. & World Bank [15] \\
 \hline 
-Liters of Alcohol per capita &  Total (sum of recorded and unrecorded alcohol) amount of alcohol consumed per person (15 years of age or older) over a calendar year, in liters of pure alcohol, adjusted for tourist consumption. & World Bank (2) \\
+Liters of Alcohol per capita &  Total (sum of recorded and unrecorded alcohol) amount of alcohol consumed per person (15 years of age or older) over a calendar year, in liters of pure alcohol, adjusted for tourist consumption. & World Bank [16] \\
 \hline 
-Suicide Prevention Strategy &  Countries which are known have a stand-alone national suicide prevention strategy are included as 1s, else 0. Note that the plan must be stand-alone, and may not be integrated into another plan, in order to count in the dataset. & World Health Organization (3) \\
+Suicide Prevention Strategy &  Countries which are known have a stand-alone national suicide prevention strategy are included as 1s, else 0. Note that the plan must be stand-alone, and may not be integrated into another plan, in order to count in the dataset. & World Health Organization [10] \\
 \hline
-Psychiatrists in mental health, per 100,000 pop. & Number of Psychiatrists working in the mental health sector, per 100,000 population.  & World Health Organization (4)  \\
+Psychiatrists in mental health, per 100,000 pop. & Number of Psychiatrists working in the mental health sector, per 100,000 population.  & World Health Organization [17]  \\
 \hline
-Mental hospitals, per 100,000 pop. & Number of hospitals dedicated to mental health per 100,000 population & World Health Organization (5) \\
+Mental hospitals, per 100,000 pop. & Number of hospitals dedicated to mental health per 100,000 population & World Health Organization [18] \\
 \hline
 \end{tabular} 
 \end{table}
@@ -721,18 +750,17 @@ Transformation}\label{initial-model-choice-and-transformation}
 
 We developed a multiple linear regression model to infer properties
 about how a handful of socioeconomic and cultural indicators impact
-suicide rates. Initial Model, First, we analyzed the diagnostic plots to
-understand if our model appropriately fits the data that we have. A
-major red flag here was the Normal Q-Q plot, which shows if residuals
-are normally distributed. The residuals deviate from the reference line
-at the higher quintiles. In order to correct for this, our next step was
-to try a Box Cox transformation on Y. Below is the log-likelihood plot
-to determine the lambda value for the Box Cox transformation. A lambda
-value of 0.4 was chosen.
-
-We also applied log transformation to the variable GDP per capita to
-better represent the relationship between this variable and the outcome
-variable based on visual data exploration and resulting effect .
+suicide rates. One of our first modeling steps was to conduct visual
+analysis and explore diagnostic plots to understand how appropriately
+our model fit the data that we collected. One key tool we used was the
+normal Q-Q plot, which shows if residuals are normally distributed. In
+order to correct for this, we employed a Box Cox transformation on Y.
+Below is the log-likelihood plot to determine the \(\lambda\) value for
+the Box Cox transformation. In the end a \(\lambda\) value of \(0.4\)
+was chosen. We also applied log transformation to the variable GDP per
+capita to better represent the relationship between this variable and
+the outcome variable based on visual data exploration and resulting
+effect .
 
 \subsubsection{Outlier Removal
 Decisions}\label{outlier-removal-decisions}
@@ -898,10 +926,10 @@ examples and indicators}, 2019, Retrieved from:
 \url{https://apps.who.int/iris/handle/10665/279765}, Accessed: accessed
 2020-04-17
 
-{[}11{]} \emph{The Effects of War and Alcohol Consumption Patterns on
-Suicide: United States, 1910-1933}, 1989, Retrieved from:
-\url{https://apps.who.int/iris/rest/bitstreams/1174021/retrieve},
-Accessed: 2020-04-17
+{[}11{]} \emph{Low and Middle-Income Countries Experience the Highest
+Rates of Suicide}, 2019, Retrieved from:
+\url{https://interestingengineering.com/low-and-middle-income-countries-experience-the-highest-rates-of-suicide}.
+Accessed 2020-04-16
 
 {[}12{]} \emph{Global status report on alcohol and health 2018}, 2018,
 Retrieved from:
@@ -958,5 +986,20 @@ Accessed: 2020-04-06
 suicide attempt}, 2016, Retrieved from:
 \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5340592/}. Accessed
 2020-04-05
+
+{[}24{]} \emph{Prevention of Suicide: Guidelines for the Formulation and
+Implementation of National Strategies}, 1996, Retrieved from:
+\url{https://www.suicideinfo.ca/resource/siecno-19960289/}. Accessed
+2020-04-02
+
+{[}25{]} \emph{Preventing suicide: A global imperative}, 2014, Retrieved
+from:
+\url{https://www.who.int/mental_health/suicide-prevention/world_report_2014/en/}.
+Accessed 2020-04-12
+
+{[}26{]} \emph{The Effects of War and Alcohol Consumption Patterns on
+Suicide: United States, 1910--1933}, 1989, Retrieved from:
+\url{https://academic.oup.com/sf/article-abstract/68/2/513/1927193}.
+Accessed 2020-04-16
 
 \end{document}
