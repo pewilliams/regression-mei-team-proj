@@ -28,7 +28,7 @@ source('plots.R')
 
 Suicide is a complex worldwide problem that has many causes. This report aims to highlight trends related to country-level measures of suicide globally. The researchers utilize open source data from the World Health Organization and other non-governmental bodies to develop an inferential statistical model. The model considers country level data related to the wealth, culture, and specific efforts to improve mental health. The model is developed through the implementation of a couple of key algorithms and variable transformations.
 
-Based on our analysis we recommend countries to consider establishing an authoritative agency that can manage the investigation, formulation, and implementation of a national suicide prevention strategy. Additionally, policy makers should consider implementing measures designed to mitigate the harmful use of alcohol. We also recommend investment in research to better understand potential relationships between income instability, income protection and suicide at the individual level. 
+Based on our analysis we recommend countries consider establishing an authoritative agency that can manage the investigation, formulation, and implementation of a national suicide prevention strategy. Additionally, policy makers should consider implementing measures designed to mitigate the harmful use of alcohol. We also recommend investment in research to better understand potential relationships between income instability, income protection and suicide at the individual level. 
 
 An overview of potential limitations of our research in context of the scope of the data we collected, and the methodologies we employed is provided. This overview is meant inform interpretation of key variables of interest in our model, as well as providing commentary on the limitations of using aggregate data to make inferences at local or regional levels.  
    
@@ -37,55 +37,56 @@ An overview of potential limitations of our research in context of the scope of 
 # Research Motivation
 
 Suicide is a complex societal problem with multiple social, psychological, biological, and cultural factors.  It is one of the top 20 leading causes of death in the world for all ages [4].  An estimated one million people die annually from suicide, i.e., a global mortality rate of $16$ per $100,000$, or one death every $40$ seconds [4].  Due to the interactions of so many factors, suicide has no singular cause.  
+
 Though it might seem intuitive to categorize suicidal ideation, attempted suicide, and completed suicide as strictly a psychiatric or medical issue or a mental illness, not all who commit suicide are mentally ill. Mental illness is often not clearly distinguishable from normal distress [5]. Stressful experiences, such as exposure to trauma, the death of a loved one, a job loss, a change in physical health or relationships and individual characteristics and behaviors are also associated with suicide [6].
 
 ## Global Trends in Suicide Epidemiology
 
-Suicide is the 15th leading cause of death worldwide, with over 75% of suicides occurring in low-income and middle-income countries [19]. Poverty, particularly in the form of worse economic status, diminished wealth, and unemployment is associated with suicide [19]. Poverty may be defined in terms of deprivation across the multiple dimensions of life, such as education, health, or housing [20]. Both chronic poverty and acute economic events, such as crop failure, constitute possible risk factors for suicidal ideations and behaviors [19]. 
+Suicide is the $15^{\text{th}}$ leading cause of death worldwide, with over $75\%$ of suicides occurring in low-income and middle-income countries [19]. Poverty, particularly in the form of economic status, diminished wealth, and unemployment is often associated with suicide [19]. Poverty may be defined in terms of deprivation across the multiple dimensions of life, such as education, health, or housing [20]. Both chronic poverty and acute economic events, such as crop failure, constitute possible risk factors for suicidal ideations and behaviors [19]. 
 
-Poverty, unemployment, illiteracy, lack of civic facilities, poor access to health facilities, the absence of health insurance or of welfare are factors that adversely impact upon the overall mental health status of the population [21]. In developing countries, the interval between onset of suicidal ideation and the act of suicide is frequently overlooked—partly because of ignorance but also because families and subjects do not know where to seek help. Even when they do realize something is wrong, they lack resources to seek help. [21] 
+Poverty, unemployment, illiteracy, lack of civic facilities, poor access to health facilities, the absence of health insurance or institutional welfare benefits are factors that adversely impact upon the overall mental health status of the population [21]. In developing countries, the interval between onset of suicidal ideation and the act of suicide is frequently overlooked—partly because of ignorance but also because families and subjects do not know where to seek help. Even when they do realize something is wrong, they lack resources to seek help. [21] 
 
 To underscore the complex nature of the suicide problem, and to show how causes of suicide can vary between countries, we contrast the situations in Zimbabwe and Russia. Zimbabwe has suffered endemic poverty, hyperinflation, and high unemployment for years. On the other hand, Russia’s levels of alcohol consumption are among the highest in the world. Though their underlying conditions appear to be markedly different, both nations suffer from high rates of suicide.  
 
 ### Case Study: Economics - Zimbabwe 
 
-Endemic poverty, hyperinflation, and an unemployment rate of over 90% [7] are among the economic and social problems plaguing Zimbabwe, where political crisis coupled with failed economic policy have led to its decline. Zimbabwe’s economic woes are often attributed to the policies of former dictator Robert Mugabe. Post Mugabe, Zimbabwe continues to deal with debt issues, difficulty attracting foreign investment, and currency instability.  
+Endemic poverty, hyperinflation, and extreme unemployment [7] are among the economic and social problems plaguing Zimbabwe, where political crisis coupled with failed economic policy have led to its decline. Zimbabwe’s economic woes are often attributed to the policies of former dictator Robert Mugabe. Post Mugabe, Zimbabwe continues to deal with debt issues, difficulty attracting foreign investment, and currency instability.  
 
-The WHO estimates that 19 persons per 100k take their own life deliberately in Zimbabwe per annum (2019). Of the 166 countries in our study, Zimbabwe ranks 13th in the world for suicides per capita.  
+The *WHO* estimates that $19$ persons per $100,000$ take their own life deliberately in Zimbabwe per annum ($2019$). Of the $166$ countries in our study, Zimbabwe ranks $13^{\text{th}}$ in the world for suicides per capita, and has one of the highest rates in Africa as visualized below:  
 
 *Figure 1: Suicide Rate in Africa (annual persons per 100k population)*  
-```{r africa_map_plot, include=T, echo = F, fig.align='center', fig.width=6, fig.height=4}
+```{r africa_map_plot, include=T, echo = F, fig.align='center', fig.width=6, fig.height=5}
 ##set include=T if you want this plot
 africa_map
 ```
 *Sourced from the World Health Organization report: “Suicide: Key Facts, 2019” and the WorldBank Economic Profile of the Country of Zimbabwe*
 
+\newpage 
+
 ### Case Study: Alcohol Abuse - Russia
 
-In general, there is no single factor responsible for the suicide rate. Globally however, harmful use of alcohol is among the major risk factors for suicide.  
+Harmful use of alcohol is often cited as a major risk factor for suicide.  A study published in *The Lancet* found that global alcohol consumption saw an increase of about $70\%$ from $1990$ to $2017$, going from about $21$ billion liters of pure alcohol to $35.7$ billion liters of pure alcohol [22].  Countries that have higher rates of alcohol use generally also have higher rates of suicide.  Current evidence indicates an association between alcohol dependence and impulsive suicide attempts [4].  
 
-A study published in The Lancet found that global alcohol consumption saw an increase of about 70% from 1990 to 2017, going from about 21 billion liters of pure alcohol to 35.7 billion liters of pure alcohol [22].  Countries that have higher rates of alcohol use generally also have higher rates of suicide.  Current evidence indicates an association between alcohol dependence and impulsive suicide attempts [4].  
+Alcohol use disorder (AUD), defined in the WHO’s International Classification of Diseases, is a chronic disease characterized by compulsive alcohol consumption, loss of control over of alcohol intake, and negative emotional state when not consuming alcohol. Alcohol intoxication can increase dysphoria, cognitive dysfunction, impulsivity and suicidal ideation.  People have approximately seven times increased risk for a suicide attempt soon after drinking alcohol, and this risk further increases to $37$ times after heavy use of alcohol [12]. Risk of suicidal ideation, suicidal attempts and completed suicide are each increased by 2–3 times among those with Alcohol Use Disorders (AUD) in comparison with the general population [12].  
 
-Alcohol use disorder (AUD), defined in the WHO’s International Classification of Diseases, is a chronic disease characterized by compulsive alcohol consumption, loss of control over of alcohol intake, and negative emotional state when not consuming alcohol. Alcohol intoxication can increase dysphoria, cognitive dysfunction, impulsivity and suicidal ideation.  People have approximately seven times increased risk for a suicide attempt soon after drinking alcohol, and this risk further increases to 37 times after heavy use of alcohol [12]. Risk of suicidal ideation, suicidal attempts and completed suicide are each increased by 2–3 times among those with Alcohol Use Disorders (AUD) in comparison with the general population [12].  
-
-In Russia, the prevalence of AUD is about 4.7%, meaning that almost 1-in-20 suffer from alcohol dependence [8]. Alcoholism has been a problem because drinking is not only pervasive, but also a socially acceptable behavior in Russian society. 
-The WHO estimates that 27 persons per 100k take their own life deliberately in Russia per annum (2019). Of the 166 countries in our study, Russia ranks 3rd in the world for suicides per capita.
+In Russia, the prevalence of AUD is approximately $5\%$, meaning that almost 1-in-20 suffer from alcohol dependence [8]. Alcoholism has been a problem because drinking is not only pervasive, but also a socially acceptable behavior in Russian society. The *WHO* estimates that 27 persons per 100k take their own life deliberately in Russia per annum ($2019$). Of the $166$ countries in our study, Russia ranks $3^{\text{rd}}$ in the world for suicides per capita, and has higher rates than many of its global neighbors as visualized below:  
 
 *Figure 2: Suicide Rate in Russia (annual persons per 100k population)* 
-```{r russia_map_plot, include=T, echo = F, fig.align='center', fig.width=6, fig.height=4}
+```{r russia_map_plot, include=T, echo = F, fig.align='center', fig.width=6, fig.height=5}
 ##set include=T if you want this plot
 russia_map
 ```
 *Sourced from the World Health Organization report: Suicide: Key Facts, 2019*
 
+\newpage 
 
 # Variables \& Data Sources
 
-Due to the sheer number of potential factors associated with suicide and the complex nature of the relationships between them, we wanted to identify those that were best associated with suicide rates at the country level. We chose to limit our study to a small set of factors that could be controlled for and acted upon via policy interventions. The domains from which we drew the factors, had to be broad enough to reasonably represent as many of the potential causes or mitigators of suicide as possible.  
+Due to the sheer number of potential factors associated with suicide and the complex nature of the relationships between them, we wanted to identify those that were best associated with suicide rates at the country level. We chose to limit our study to a small set of factors that could be controlled for and acted upon via policy interventions. We also wanted the domains from which we drew the factors to be broad enough to reasonably represent many of the potential causes or mitigators of suicide if possible.  
 
-Among the domains in consideration were lifestyle, medical/mental health, economic, and suicide-focused policy. The core dataset we plan to rely on comes directly from the World Health Organization [3] (*WHO*). The key measure of interest for our study is the age-standardized suicide rate by country, which is defined as a weighted average of the age-specific mortality rates per 100,000 persons, where the weights are the proportions of persons in the corresponding age groups of the WHO standard population, see the Appendix section for details on how this is estimated.  Estimates of age-standardized suicide rates were taken in the year with the most recent available data for each country from the *WHO*.  
+Variables considered came from lifestyle, medical/mental health, economic, and suicide-focused policy domains. The core dataset we plan to rely on comes directly from the World Health Organization [3] (*WHO*). The key measure of interest for our study is the age-standardized suicide rate by country, which is defined as a weighted average of the age-specific mortality rates per $100,000$ persons, where the weights are the proportions of persons in the corresponding age groups of the *WHO* standard population, see the Appendix section for details on how this is estimated.  Estimates of age-standardized suicide rates were taken in the year with the most recent available data for each country from the *WHO*.  
 
-In addition to the core suicide rate statistics provided above, we append country-level data from ancillary data sources. Health Expenditure and GDP per capita were chosen to reflect the resources that a country has its disposal to reduce the suicide rate. Liters of Alcohol per capita was chosen to account for an aspect of culture (alcohol consumption) that the media often links to mental health outcomes. The prevalence of a suicide prevention strategy, the number of psychiatrists, and the number of mental hospitals were chosen to reflect how a country has deployed its resources to improve mental health outcomes. The female/male labor participation ratio was included to control for this aspect of a country’s culture. The data for these variables along with the suicide rate variable was available for 166 countries.
+In addition to the core suicide rate statistics provided above, we appended country-level data from ancillary data sources. Health Expenditure was chosen to reflect the resources that a country has its disposal to reduce the suicide rate. GDP per capita was included as a proxy for income or economic well-being. Liters of Alcohol per capita was chosen to account for an aspect of culture (alcohol consumption) that the media often links to mental health outcomes. The prevalence of a suicide prevention strategy, the number of psychiatrists, and the number of mental hospitals were chosen to reflect how a country has deployed its resources to improve mental health outcomes. The female/male labor participation ratio was included to control for this aspect of a country’s culture. The data for these variables along with the suicide rate variable was available for $166$ countries.
 
 Below is the full set of considered independent variables with corresponding source:  
 
@@ -105,17 +106,16 @@ Note that more detailed descriptions of the data and the source links can be fou
 
 We developed a multiple linear regression model to infer properties about how a handful of socioeconomic and cultural indicators impact suicide rates. An important distinction is that the model is intended to be used for inferential, rather than predictive purposes. Our objective is to discover relationships between variables to inform relevant public policy and future research in the area.  
 
-The first step in developing the model was to transform the outcome variable. This transformation (Box-Cox) was used to make the outcome variable ‘more normal’, and it helped to characterize relationships between variables in our data. The next step was to remove outliers. We used regression diagnostics and visual data exploration to identify unusual data points. Brief qualitative research was then conducted on the country represented by each point to confirm whether or not the point should be removed.  After the removal of the outlier points, we utilized a stepwise algorithm to identify which variables should be included in our model. This ‘automatic’ procedure yielded the set of variables that we would analyze more closely.  
+After conducting some exploratory data analysis, one of the first steps in developing the model was to transform the outcome variable. We utilized the *Box-Cox* transformation to make the outcome variable ‘more normal’, and it helped to characterize relationships between variables in our data. The next step was to remove outliers. We used regression diagnostics and visual data exploration to identify unusual data points. Brief qualitative research was then conducted on the country represented by each point to confirm whether or not the point should be removed.  After the removal of the outlier points, we utilized a stepwise algorithm to identify which variables should be included in our model. This ‘automatic’ procedure yielded the set of variables that we would analyze more closely.  
 
-The following variables were selected and included in our model: labor force participation rate (female-male ratio), GDP per capita (PPP), liters of alcohol consumption per capita, and the prevalence of a national suicide prevention strategy. The algorithm excluded the following variables from the model: current health expenditure as a percentage of GDP, the number of psychiatrists working in the mental health sector (per 100k pop.), and the number of mental hospitals (per 100k pop.).  
+The following variables were selected and included in our model: labor force participation rate (female-male ratio), GDP per capita (per-person), liters of alcohol consumption per capita, and the prevalence of a national suicide prevention strategy. The algorithm excluded the following variables from the model: current health expenditure as a percentage of GDP, the number of psychiatrists working in the mental health sector (per 100,000), and the number of mental hospitals (per 100,000).  
 
 The final step in the development of our model was to implement an iterative algorithm that adjusted the weights for each of our data points (Iteratively Reweighted Least Squares). This allowed us to further limit the influence of outliers on our data.  
 
-In the development of our model, we relied on a few assumptions about the quality of our data. The first is regarding GDP per capita, which is assumed to be an appropriate indicator to reflect the wealth of a country. The second relates to the prevalence of a national suicide prevention strategy. It is assumed that the presence of such a strategy is indicative that the country has taken the time to develop a comprehensive and data driven approach to suicide, based on solid evidence. We also assume that the liters of alcohol consumed per capita reflects the tendency for individuals in the given country to consume excessive amounts of alcohol.  
+In the development of our model, we relied on a few assumptions about the quality of our data. The first is regarding GDP per capita, which is assumed to be an appropriate indicator to reflect the wealth of a country or individual income. The second relates to the prevalence of a national suicide prevention strategy. It is assumed that the presence of such a strategy is indicative that the country has taken the time to develop a comprehensive and data driven approach to suicide, based on solid evidence. We also assume that the liters of alcohol consumed per capita reflects the tendency for individuals in the given country to consume excessive amounts of alcohol.  
 
 To develop models utilized in this report we relied on the based functionality provided in the *R* language. Further details can be found in the appendix.  
-
-
+  
 # Quantifying Impact of Measures on Suicide
 
 Our model allows the data analyst to describe the relationships between country-level indicators and measures and suicide rates globally. Armed with a descriptive model of suicide rates, decision-makers can quantify the relationships between these measures to support insight for their health related planning activities. However, data-driven insights derived from this model and the data sources highlighted in this report should be considered in context of specific country-level impacts not considered in this report. As policy makers infer correlations of country-level measures and indicators with suicide rates there is a need to continue to engage subject-matter-experts in the field to draw on their knowledge and experience. Our intention is to provide some initial context and decision support for policy makers managing health related planning globally and at the country level, but the limitations of our research and methodology highlight the ongoing need for data-driven insights to be utilized in context of other research available, as well as the domain knowledge of practitioners, health professionals, scientists, and policy makers among others. 
@@ -176,6 +176,8 @@ As we looked at the data, we found that the presence of a suicide prevention str
 
 Based on our estimates from our model, countries that have implemented a suicide prevention strategy have a 26% higher incidence of suicide nationally as shown below:  
 
+\newpage 
+
 *Figure 5: Expected Country-Level Suicide Rate vs. The Presence of A National Suicide Strategy* 
 ```{r sstrat_plot, include=T, echo = F, fig.align='center', fig.width=6, fig.height=3}
 ss_plot
@@ -186,7 +188,7 @@ While it may seem unintuitive that countries with with a suicide prevention stra
 
 # Recommendations and Decision Support
 
-For the selected inputs chosen in the model, there are corresponding recommendations for each input. The following sections go over recommendations for each model input: 
+Based on the impact and importance of variables included in our model, we want to provide some qualitative recommendations to support policy makers in context of the analysis conducted. The following sections provide an overview of potential strategies employed by some countries around the world, and also recommendations sourced from secondary research specific to the variables we analyzed.    
 
 ## Suicide Prevention Strategy
 
@@ -333,6 +335,8 @@ We relied on quantitative measures of model leverage, and Q-Q plots to identify 
 *Japan*: Japan has a notoriously overworked and over stressed population, although the country is very wealthy. Japan has a long cultural history of considering certain types of suicides honorable, and has relatively high cultural tolerance for suicide with a very high suicide rate when compared to other rich nations.  
 
 *Lesotho*: A small, landlocked, mountainous country in Africa with the highest suicide rate in Africa, high levels of child labor, very poor general health outcomes, and the second highest rate of tuberculosis and HIV/AIDS in the world.   
+
+\newpage 
 
 ### Stepwise Variable Selection Approach
 
