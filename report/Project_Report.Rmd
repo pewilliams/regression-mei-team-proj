@@ -25,20 +25,18 @@ source('plots.R')
 
 \begin{abstract}
 \bigskip
-Suicide is a complex worldwide problem that has a multitude of causes. This paper aims to highlight trends related to country-level measures of suicide globally. The researchers utilize open source data from the World Health Organization and other non-governmental bodies to develop an inferential statistical model. The model considers country level data related to the wealth, culture, and specific efforts to improve mental health. The model is developed through the implementation of a couple of key algorithms and variable transformations.
 
-After model development, deeper analysis and recommendations are presented regarding the factors of interest.  It is recommended for countries to consider establishing an authoritative agency, tasked with the continued investigating, formulating, and implementing of a National Suicide Prevention Strategy. Additionally, policy makers should consider implementing measures designed to mitigate the harmful use of alcohol. However, this is a very delicate matter, and cannot be resolved by simply removing access to alcohol. Furthermore, it is recommended to invest in research to better understand potential relationships between income instability, income protection and suicide at the individual level. It is also important for governments to pursue measures aimed at poverty reduction and unemployment benefits to support economic well-being.
+Suicide is a complex worldwide problem that has many causes. This report aims to highlight trends related to country-level measures of suicide globally. The researchers utilize open source data from the World Health Organization and other non-governmental bodies to develop an inferential statistical model. The model considers country level data related to the wealth, culture, and specific efforts to improve mental health. The model is developed through the implementation of a couple of key algorithms and variable transformations.
 
-As in any research paper, there are clear limitations to the data accessible and to the analysis performed. The data that the model was built upon was assumed to be indicative of wider problems in the countries of interest. For example, high country level alcohol consumption was assumed to be indicative of higher prevalence of alcohol abuse. Another key limitation is that the aggregate data for a singular country may be misrepresentative of the data at the local or regional levels.  Regarding the analysis, it is very difficult to perfectly untangle the effect of variable interactions between each other. 
+Based on our analysis we recommend countries to consider establishing an authoritative agency that can manage the investigation, formulation, and implementation of a national suicide prevention strategy. Additionally, policy makers should consider implementing measures designed to mitigate the harmful use of alcohol. We also recommend investment in research to better understand potential relationships between income instability, income protection and suicide at the individual level. 
+
+An overview of potential limitations of our research in context of the scope of the data we collected, and the methodologies we employed is provided. This overview is meant inform interpretation of key variables of interest in our model, as well as providing commentary on the limitations of using aggregate data to make inferences at local or regional levels.  
    
-
-
 \end{abstract}  
 
 # Research Motivation
 
-Suicide is a complex societal problem with multiple social, psychological, biological, and cultural factors.  It is one of the top 20 leading causes of death in the world for all ages [4].  An estimated one million people die annually from suicide, i.e., a global mortality rate of 16 per 100,000, or one death every 40 seconds [4].  Due to the interactions of so many factors, suicide has no singular cause.  
-
+Suicide is a complex societal problem with multiple social, psychological, biological, and cultural factors.  It is one of the top 20 leading causes of death in the world for all ages [4].  An estimated one million people die annually from suicide, i.e., a global mortality rate of $16$ per $100,000$, or one death every $40$ seconds [4].  Due to the interactions of so many factors, suicide has no singular cause.  
 Though it might seem intuitive to categorize suicidal ideation, attempted suicide, and completed suicide as strictly a psychiatric or medical issue or a mental illness, not all who commit suicide are mentally ill. Mental illness is often not clearly distinguishable from normal distress [5]. Stressful experiences, such as exposure to trauma, the death of a loved one, a job loss, a change in physical health or relationships and individual characteristics and behaviors are also associated with suicide [6].
 
 ## Where Is This a Problem
@@ -408,7 +406,7 @@ F Statistic & 27.475$^{***}$ (df = 4; 157) \\
 
 ## Tools Utilized
 
-We utilized. 
+We utilized the *R* language to build models and work with the data in this report. More information can be found at https://www.R-project.org. To create the visualizations in the paper, we utilized the *R* package *ggplot2* authored by Hadley Wickham, see https://ggplot2.tidyverse.org for more details. We also utilized the *rmarkdown* package, authored by JJ Allaire, Yihui Xie, Jonathan McPherson, Javier Luraschi , Kevin Ushey,Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone to simplify the process of compiling this report. More details can be found at https://github.com/rstudio/rmarkdown. 
 
 \newpage 
   
