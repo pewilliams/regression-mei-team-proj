@@ -199,7 +199,7 @@ Government policy to combat suicide allows for the “development and strengthen
 
 We found that countries that have put a national suicide prevention strategy in place, tend to have higher incidence of suicide rates overall, this may be reactionary in nature. If a country has high suicide rates then more attention is paid to the issue and programs are put in place to combat it. Since most National suicide programs have only been emplaced in the last two decades, this may explain the counterintuitive trend observed. However, it is still advised to have a national strategy to address suicide. 
 
-Government policy to combat suicide allows for the “development and strengthening surveillance (of at-risk groups), and to provide and disseminate information” [11] on at-risk individuals to inform action. An implementation of a NSPS in Scotland called “Choose Live” decreased suicide rates by 20% over 10 years. This sort of improvement in suicide rates after implementing is implied in the 2018 report and lends to the recommendation that national strategies should be implemented. 
+Government policy to combat suicide allows for the “development and strengthening surveillance (of at-risk groups), and to provide and disseminate information” [10] on at-risk individuals to inform action. An implementation of a NSPS in Scotland called “Choose Live” decreased suicide rates by 20% over 10 years. This sort of improvement in suicide rates after implementing is implied in the 2018 report and lends to the recommendation that national strategies should be implemented. 
 
 Developing countries are recommended to take advantage of online resources for policy planners like MiNDbank a website created by the WHO with recommendations on mental health issues [9]. Countries still should consider establishing an authoritative agency, tasked with the continued investigating, formulating, and implementing of a National Suicide Prevention Strategy.  It should follow actions like those below from countries with success in reducing suicide [25]:
   + Reduce access to means and methods of suicide 
@@ -218,7 +218,7 @@ Suicide is a complex societal problem with no singular cause. However, harmful u
 
 ## GDP Per Capita
 
-There is a negative correlation between GDP per capita adjusted for Purchasing Power Parity (PPP) and suicide rates. While it is unknown why this is, we believe that money should be spent to uncover more about the relationship between income and suicide. Countries with lower GDPs tend to have higher rates of suicide, which also tend to have lower quality infrastructure, health care, and a plethora of other associated industries. [27] With these lower quality services and access to them, at risk individuals may have higher likelihood of suicide. An analysis on income of specific income groups would shed more light as to whether low income correlates to higher suicide or not. As such it is recommended invest in research to better understand potential relationships between income instability, income protection and suicide at the individual level. In addition, governments should pursue measures aimed at poverty reduction and unemployment benefits to support economic well-being. 
+There is a negative correlation between GDP per capita adjusted for Purchasing Power Parity (PPP) and suicide rates. While it is unknown why this is, we believe that money should be spent to uncover more about the relationship between income and suicide. Countries with lower GDPs tend to have higher rates of suicide, which also tend to have lower quality infrastructure, health care, and a plethora of other associated industries. [11] With these lower quality services and access to them, at risk individuals may have higher likelihood of suicide. An analysis on income of specific income groups would shed more light as to whether low income correlates to higher suicide or not. As such it is recommended invest in research to better understand potential relationships between income instability, income protection and suicide at the individual level. In addition, governments should pursue measures aimed at poverty reduction and unemployment benefits to support economic well-being. 
 
 # Research Limitations
 
@@ -433,7 +433,7 @@ We utilized.
 
 [10] *National suicide prevention strategies: Progress, examples and indicators*, 2019, Retrieved from: https://apps.who.int/iris/handle/10665/279765, Accessed: accessed 2020-04-17     
 
-[11] *The Effects of War and Alcohol Consumption Patterns on Suicide: United States, 1910-1933*, 1989, Retrieved from:  https://apps.who.int/iris/rest/bitstreams/1174021/retrieve, Accessed: 2020-04-17     
+[11] *Low and Middle-Income Countries Experience the Highest Rates of Suicide*, 2019, Retrieved from: https://interestingengineering.com/low-and-middle-income-countries-experience-the-highest-rates-of-suicide. Accessed 2020-04-16     
 
 [12] *Global status report on alcohol and health 2018*, 2018, Retrieved from:  https://www.who.int/substance_abuse/publications/global_alcohol_report/en/, Accessed: 2020-04-05  
 
@@ -465,7 +465,6 @@ We utilized.
 
 [26] *The Effects of War and Alcohol Consumption Patterns on Suicide: United States, 1910–1933*, 1989, Retrieved from: https://academic.oup.com/sf/article-abstract/68/2/513/1927193. Accessed 2020-04-16
 
-[27] *Low and Middle-Income Countries Experience the Highest Rates of Suicide*, 2019, Retrieved from: https://interestingengineering.com/low-and-middle-income-countries-experience-the-highest-rates-of-suicide. Accessed 2020-04-16
 
 
 
