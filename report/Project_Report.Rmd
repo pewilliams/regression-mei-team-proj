@@ -25,11 +25,12 @@ source('plots.R')
 
 \begin{abstract}
 \bigskip
-Relying on open source data from the World Health Organization and other non-governmental bodies, we highlight trends and related to country-level measures of suicide globally. A descriptive model is formulated that identifies a set of meaningful factors and measures that highlights some intuitive relationships between country-level suicide rates and other indicators such as income, alcohol consumption, and the presence of a country level suicide prevention strategy.
+Suicide is a complex worldwide problem that has a multitude of causes. This paper aims to highlight trends related to country-level measures of suicide globally. The researchers utilize open source data from the World Health Organization and other non-governmental bodies to develop an inferential statistical model. The model considers country level data related to the wealth, culture, and specific efforts to improve mental health. The model is developed through the implementation of a couple of key algorithms and variable transformations.
 
-An overview of our the sources of data utilized, and the process of collection of data related to suicide at the country level is described briefly. A description of some ancillary datasets that were employed to augment and enrich insights is also provided. The intention of these descriptions is to make further research and data analysis on this topic more accessible to other interested researchers and data analysts in the future.  
+After model development, deeper analysis and recommendations are presented regarding the factors of interest.  It is recommended for countries to consider establishing an authoritative agency, tasked with the continued investigating, formulating, and implementing of a National Suicide Prevention Strategy. Additionally, policy makers should consider implementing measures designed to mitigate the harmful use of alcohol. However, this is a very delicate matter, and cannot be resolved by simply removing access to alcohol. Furthermore, it is recommended to invest in research to better understand potential relationships between income instability, income protection and suicide at the individual level. It is also important for governments to pursue measures aimed at poverty reduction and unemployment beneﬁts to support economic well-being.
 
-Utilizing insights from our data analysis, as well as secondary research sources, we present some recommendations related to health-planning related activities for policy makers. Limitations to our research are also discussed in context of the scope of the data collected and the methodology presented here.   
+As in any research paper, there are clear limitations to the data accessible and to the analysis performed. The data that the model was built upon was assumed to be indicative of wider problems in the countries of interest. For example, high country level alcohol consumption was assumed to be indicative of higher prevalence of alcohol abuse. Another key limitation is that the aggregate data for a singular country may be misrepresentative of the data at the local or regional levels.  Regarding the analysis, it is very difficult to perfectly untangle the effect of variable interactions between each other. 
+   
 
 
 \end{abstract}  
@@ -84,7 +85,7 @@ russia_map
 
 Due to the sheer number of potential factors associated with suicide and the complex nature of the relationships between them, we wanted to identify those that were best associated with suicide rates at the country level. We chose to limit our study to a small set of factors that could be controlled for and acted upon via policy interventions. The domains from which we drew the factors, had to be broad enough to reasonably represent as many of the potential causes or mitigators of suicide as possible.  
 
-Among the domains in consideration were lifestyle, medical/mental health, economic, and suicide-focused policy. The core dataset we plan to rely on comes directly from the World Health Organization (*WHO*). The key measure of interest for our study is the age-standardized suicide rate by country, which is defined as a weighted average of the age-specific mortality rates per 100,000 persons, where the weights are the proportions of persons in the corresponding age groups of the WHO standard population, see the Appendix section for details on how this is estimated.  Estimates of age-standardized suicide rates were taken in the year with the most recent available data for each country from the *WHO*.  
+Among the domains in consideration were lifestyle, medical/mental health, economic, and suicide-focused policy. The core dataset we plan to rely on comes directly from the World Health Organization [3] (*WHO*). The key measure of interest for our study is the age-standardized suicide rate by country, which is defined as a weighted average of the age-specific mortality rates per 100,000 persons, where the weights are the proportions of persons in the corresponding age groups of the WHO standard population, see the Appendix section for details on how this is estimated.  Estimates of age-standardized suicide rates were taken in the year with the most recent available data for each country from the *WHO*.  
 
 In addition to the core suicide rate statistics provided above, we append country-level data from ancillary data sources. Health Expenditure and GDP per capita were chosen to reflect the resources that a country has its disposal to reduce the suicide rate. Liters of Alcohol per capita was chosen to account for an aspect of culture (alcohol consumption) that the media often links to mental health outcomes. The prevalence of a suicide prevention strategy, the number of psychiatrists, and the number of mental hospitals were chosen to reflect how a country has deployed its resources to improve mental health outcomes. The female/male labor participation ratio was included to control for this aspect of a country’s culture. The data for these variables along with the suicide rate variable was available for 166 countries.
 
@@ -235,7 +236,7 @@ For our analysis, we chose to use a country level scope. However, this cannot dr
 
 # Lessons Learned
 
-*Osman to take a quick stab*
+We had a great experience taking ISyE 6414. Technically, we learned a tremendous amount about how and why different regression techniques are used. However, one of the most important lessons learned is from working on the project. Specifically, we learned about the significance of communicating the details of the project in a format that can be understood and acted on by regular professionals, even if they are not educated in statistics. When presenting a certain piece of information, we made the habit to consider the perspective of someone who may not have a strong statistical background. Developing this habit was difficult, but it eventually formed after reminding ourselves that this would be a very important skill in our future jobs. 
 
 \newpage 
 
@@ -253,19 +254,19 @@ The following table describes the the full set of variables we considered:
 \hline  
   Input & Data Description  & Source  \\   
 \hline 
-Current Health Expenditure as a Percentage of GDP & This data provides an indication on the level of resources channeled to health relative to other uses. It shows the importance of the health sector in the whole economy and indicates the societal priority which health is given measured in monetary terms. & World Health Organization (2)  \\   
+Current Health Expenditure as a Percentage of GDP & This data provides an indication on the level of resources channeled to health relative to other uses. It shows the importance of the health sector in the whole economy and indicates the societal priority which health is given measured in monetary terms. & World Health Organization [13]  \\   
  \hline 
-Labor force participation rate (female-male ratio) & Ratio of female to male of proportion of a country’s working-age population (ages 15 and older) that engages in the labor market, either by working or actively looking for work, expressed as a percentage of the working-age population. & United Nations Development Programme (1) \\   
+Labor force participation rate (female-male ratio) & Ratio of female to male of proportion of a country’s working-age population (ages 15 and older) that engages in the labor market, either by working or actively looking for work, expressed as a percentage of the working-age population. & United Nations Development Programme [14] \\   
 \hline 
-GDP per capita, PPP & Gross Domestic Product converted to international dollars using purchasing power parity (PPP) rates and divided by total population. This data is in terms of PPP in order to account for differences in the cost of living between countries. & World Bank (1) \\
+GDP per capita, PPP & Gross Domestic Product converted to international dollars using purchasing power parity (PPP) rates and divided by total population. This data is in terms of PPP in order to account for differences in the cost of living between countries. & World Bank [15] \\
 \hline 
-Liters of Alcohol per capita &  Total (sum of recorded and unrecorded alcohol) amount of alcohol consumed per person (15 years of age or older) over a calendar year, in liters of pure alcohol, adjusted for tourist consumption. & World Bank (2) \\
+Liters of Alcohol per capita &  Total (sum of recorded and unrecorded alcohol) amount of alcohol consumed per person (15 years of age or older) over a calendar year, in liters of pure alcohol, adjusted for tourist consumption. & World Bank [16] \\
 \hline 
-Suicide Prevention Strategy &  Countries which are known have a stand-alone national suicide prevention strategy are included as 1s, else 0. Note that the plan must be stand-alone, and may not be integrated into another plan, in order to count in the dataset. & World Health Organization (3) \\
+Suicide Prevention Strategy &  Countries which are known have a stand-alone national suicide prevention strategy are included as 1s, else 0. Note that the plan must be stand-alone, and may not be integrated into another plan, in order to count in the dataset. & World Health Organization [10] \\
 \hline
-Psychiatrists in mental health, per 100,000 pop. & Number of Psychiatrists working in the mental health sector, per 100,000 population.  & World Health Organization (4)  \\
+Psychiatrists in mental health, per 100,000 pop. & Number of Psychiatrists working in the mental health sector, per 100,000 population.  & World Health Organization [17]  \\
 \hline
-Mental hospitals, per 100,000 pop. & Number of hospitals dedicated to mental health per 100,000 population & World Health Organization (5) \\
+Mental hospitals, per 100,000 pop. & Number of hospitals dedicated to mental health per 100,000 population & World Health Organization [18] \\
 \hline
 \end{tabular} 
 \end{table} 
