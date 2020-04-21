@@ -67,7 +67,7 @@ africa_map
 
 Harmful use of alcohol is often cited as a major risk factor for suicide.  A study published in *The Lancet* found that global alcohol consumption saw an increase of about $70\%$ from $1990$ to $2017$, going from about $21$ billion liters of pure alcohol to $35.7$ billion liters of pure alcohol [22].  Countries that have higher rates of alcohol use generally also have higher rates of suicide.  Current evidence indicates an association between alcohol dependence and impulsive suicide attempts [4].  
 
-Alcohol use disorder (AUD), defined in the WHO’s International Classification of Diseases, is a chronic disease characterized by compulsive alcohol consumption, loss of control of alcohol intake, and negative emotional state when not consuming alcohol. Alcohol intoxication can increase dysphoria, cognitive dysfunction, impulsivity and suicidal ideation.  People have approximately seven times increased risk for a suicide attempt soon after drinking alcohol, and this risk further increases to $37$ times after heavy use of alcohol [12]. Risk of suicidal ideation, suicidal attempts and completed suicide are each increased by 2–3 times among those with Alcohol Use Disorders (AUD) in comparison with the general population [12].  
+*Alcohol Use Disorder* (AUD), defined in the *WHO*’s International Classification of Diseases, is a chronic disease characterized by compulsive alcohol consumption, loss of control of alcohol intake, and negative emotional state when not consuming alcohol. Alcohol intoxication can increase dysphoria, cognitive dysfunction, impulsivity and suicidal ideation.  People have approximately seven times increased risk for a suicide attempt soon after drinking alcohol, and this risk further increases to $37$ times after heavy use of alcohol [12]. Risk of suicidal ideation, suicidal attempts and completed suicide are each increased by 2–3 times among those with AUD in comparison with the general population [12].  
 
 In Russia, the prevalence of AUD is approximately $5\%$, meaning that almost 1-in-20 suffer from alcohol dependence [8]. Alcoholism has been a problem because drinking is not only pervasive, but also a socially acceptable behavior in Russian society. The *WHO* estimates that 27 persons per 100k take their own life deliberately in Russia per annum ($2019$). Of the $166$ countries in our study, Russia ranks $3^{\text{rd}}$ in the world for suicides per capita, and has higher rates than many of its global neighbors as visualized below:  
 
@@ -184,7 +184,7 @@ ss_plot
 ```
 *Note: Expected rate with 95% confidence intervals for the typical country (i.e. holding other variables in model identified fixed at the 'sample mean').*
 
-While it may seem unintuitive that countries with a suicide prevention strategy have higher rates, it should not be inferred or interpreted from our model that having a national suicide prevention strategy leads to incidence of suicide rates overall. It may be understood that the establishment of this strategy may be a 'reactive' decision. The strategy may have been established as a result of high incidence. As a result, we wanted to incorporate this variable in our model to control for estimating other effects and to provide context for countries with high rates of suicide otherwise.  
+While it may seem unintuitive that countries with a suicide prevention strategy have higher rates, it should not be inferred or interpreted from our model that having a national suicide prevention strategy leads to incidence of suicide overall. It may be understood that the establishment of this strategy may be a 'reactive' decision. The strategy may have been established as a result of high incidence. As a result, we wanted to incorporate this variable in our model to control for estimating other effects and to provide context for countries with high rates of suicide otherwise.  
 
 # Recommendations and Decision Support
 
@@ -322,7 +322,7 @@ $$
 
 ### Initial Model Choice and Transformation
 
-We developed a multiple linear regression model to infer properties about how a handful of socioeconomic and cultural indicators impact suicide rates. One of our first modeling steps was to conduct visual analysis and explore diagnostic plots to understand how appropriately our model fit the data that we collected. One key tool we used was the normal Q-Q plot, which shows if residuals are normally distributed. In order to correct for this, we employed a Box Cox transformation on Y. Below is the log-likelihood plot to determine the $\lambda$ value for the Box Cox transformation. In the end a $\lambda$ value of $0.4$ was chosen. We also applied log transformation to the variable GDP per capita to better represent the relationship between this variable and the outcome variable based on visual data exploration and resulting effect . 
+We developed a multiple linear regression model to infer properties about how a handful of socioeconomic and cultural indicators impact suicide rates. One of our first modeling steps was to conduct visual analysis and explore diagnostic plots to understand how appropriately our model fit the data that we collected. One key tool we used was the normal Q-Q plot, which shows if residuals are normally distributed. To help ensure residuals were normally distributed, we employed a Box Cox transformation on $Y$, using a $\lambda$ value of $0.4$ informed by the associated log-likelihood of the model under the transformation. We also applied log transformation to the variable GDP per capita to better represent the relationship between this variable and the outcome variable based on visual data exploration and resulting effect. 
 
 ### Outlier Removal Decisions 
 
@@ -334,7 +334,7 @@ We relied on quantitative measures of model leverage, and Q-Q plots to identify 
 
 *Japan*: Japan has a notoriously overworked and over stressed population, although the country is very wealthy. Japan has a long cultural history of considering certain types of suicides honorable, and has relatively high cultural tolerance for suicide with a very high suicide rate when compared to other rich nations.  
 
-*Lesotho*: A small, landlocked, mountainous country in Africa with the highest suicide rate in Africa, high levels of child labor, very poor general health outcomes, and the second highest rate of tuberculosis and HIV/AIDS in the world.   
+*Lesotho*: A small, landlocked, mountainous country in Africa with the highest suicide rate in Africa which led to its outlier classification. In addition to high incidence of suicide, Lesotho is dealing with many problems including high levels of child labor, very poor general health outcomes, and the second highest rate of tuberculosis and HIV/AIDS in the world.    
 
 \newpage 
 

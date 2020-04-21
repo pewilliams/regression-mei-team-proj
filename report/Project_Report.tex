@@ -212,17 +212,17 @@ higher rates of alcohol use generally also have higher rates of suicide.
 Current evidence indicates an association between alcohol dependence and
 impulsive suicide attempts {[}4{]}.
 
-Alcohol use disorder (AUD), defined in the WHO's International
-Classification of Diseases, is a chronic disease characterized by
-compulsive alcohol consumption, loss of control of alcohol intake, and
-negative emotional state when not consuming alcohol. Alcohol
-intoxication can increase dysphoria, cognitive dysfunction, impulsivity
-and suicidal ideation. People have approximately seven times increased
-risk for a suicide attempt soon after drinking alcohol, and this risk
-further increases to \(37\) times after heavy use of alcohol {[}12{]}.
-Risk of suicidal ideation, suicidal attempts and completed suicide are
-each increased by 2--3 times among those with Alcohol Use Disorders
-(AUD) in comparison with the general population {[}12{]}.
+\emph{Alcohol Use Disorder} (AUD), defined in the \emph{WHO}'s
+International Classification of Diseases, is a chronic disease
+characterized by compulsive alcohol consumption, loss of control of
+alcohol intake, and negative emotional state when not consuming alcohol.
+Alcohol intoxication can increase dysphoria, cognitive dysfunction,
+impulsivity and suicidal ideation. People have approximately seven times
+increased risk for a suicide attempt soon after drinking alcohol, and
+this risk further increases to \(37\) times after heavy use of alcohol
+{[}12{]}. Risk of suicidal ideation, suicidal attempts and completed
+suicide are each increased by 2--3 times among those with AUD in
+comparison with the general population {[}12{]}.
 
 In Russia, the prevalence of AUD is approximately \(5\%\), meaning that
 almost 1-in-20 suffer from alcohol dependence {[}8{]}. Alcoholism has
@@ -490,7 +490,7 @@ country (i.e.~holding other variables in model identified fixed at the
 While it may seem unintuitive that countries with a suicide prevention
 strategy have higher rates, it should not be inferred or interpreted
 from our model that having a national suicide prevention strategy leads
-to incidence of suicide rates overall. It may be understood that the
+to incidence of suicide overall. It may be understood that the
 establishment of this strategy may be a `reactive' decision. The
 strategy may have been established as a result of high incidence. As a
 result, we wanted to incorporate this variable in our model to control
@@ -623,33 +623,30 @@ There were issues with some of our inputs, but when drilling down to
 just the inputs used in the model, we can see room for improvement in
 data quality. We used GDP per capita as a proxy for income. Other
 measures such as country-level median income should be considered in the
-future as a more accurate measure of income. This would have given a
-non-uniform distribution of wealth in the country rather than a uniform
-distribution, which is not the case due to income inequality. When
-measuring the liters of alcohol consumed, we assumed a uniform
-country-wide consumption rate. This study only considered the
-relationship between alcohol consumption and suicide and did not
-consider the relationship between substance abuse and suicide. For
-Suicide Policy (NSPS), the effectiveness of organizational response per
-country is hard to gauge since local vs federal response is not
-accounted for in the measurement. We did not have the resources to
-consider extensive local/cultural/interactional measures, making it
-difficult to make country-specific inferences in some cases.
+future as a more accurate measure of income. When measuring the liters
+of alcohol consumed, we assumed a uniform country-wide consumption rate.
+This study only considered the relationship between alcohol consumption
+and suicide and did not consider the relationship between substance
+abuse and suicide. For Suicide Policy (NSPS), the effectiveness of
+organizational response per country is hard to gauge since local vs
+federal response is not accounted for in the measurement. We did not
+have the resources to consider extensive local/cultural/interactional
+measures, making it difficult to make country-specific inferences in
+some cases.
 
 \subsection{Methodology}\label{methodology}
 
 For our analysis, we chose to use a country level scope. However, this
-cannot drill down to local or individual level. This essentially limited
-our level of fidelity of reflecting on reality. For each country, we
-only used one year, as such our model assumes effects of each input are
-fixed rather than temporally differing. When considering our inputs, we
-cannot completely untangle the effect of variable interactions between
-each other. Higher level interactions and additional factors, which may
-influence suicide rates, could be considered in the future. Finally,
-model formulation limited our analysis strength. We chose to use
-multiple linear regression for inferential and descriptive reasons, but
-more complicated / non-linear relationships could be better
-characterized with more sophisticated approaches.
+limits our ability to make inferences at the individual country level.
+For each country measured, we only used one year, as such our model
+assumes effects of each input are fixed rather than temporally
+differing. When considering our inputs, there is an opportunity to
+consider higher level interactions and additional factors that may
+influence suicide rates in the future. Finally, our model formulation
+was not complex. We chose to use multiple linear regression for
+inferential and descriptive reasons, but more complicated / non-linear
+relationships could be better characterized with more sophisticated
+approaches.
 
 \section{Lessons Learned}\label{lessons-learned}
 
@@ -764,14 +761,13 @@ about how a handful of socioeconomic and cultural indicators impact
 suicide rates. One of our first modeling steps was to conduct visual
 analysis and explore diagnostic plots to understand how appropriately
 our model fit the data that we collected. One key tool we used was the
-normal Q-Q plot, which shows if residuals are normally distributed. In
-order to correct for this, we employed a Box Cox transformation on Y.
-Below is the log-likelihood plot to determine the \(\lambda\) value for
-the Box Cox transformation. In the end a \(\lambda\) value of \(0.4\)
-was chosen. We also applied log transformation to the variable GDP per
-capita to better represent the relationship between this variable and
-the outcome variable based on visual data exploration and resulting
-effect .
+normal Q-Q plot, which shows if residuals are normally distributed. To
+help ensure residuals were normally distributed, we employed a Box Cox
+transformation on \(Y\), using a \(\lambda\) value of \(0.4\) informed
+by the associated log-likelihood of the model under the transformation.
+We also applied log transformation to the variable GDP per capita to
+better represent the relationship between this variable and the outcome
+variable based on visual data exploration and resulting effect.
 
 \subsubsection{Outlier Removal
 Decisions}\label{outlier-removal-decisions}
@@ -803,7 +799,9 @@ has relatively high cultural tolerance for suicide with a very high
 suicide rate when compared to other rich nations.
 
 \emph{Lesotho}: A small, landlocked, mountainous country in Africa with
-the highest suicide rate in Africa, high levels of child labor, very
+the highest suicide rate in Africa which led to its outlier
+classification. In addition to high incidence of suicide, Lesotho is
+dealing with many problems including high levels of child labor, very
 poor general health outcomes, and the second highest rate of
 tuberculosis and HIV/AIDS in the world.
 
